@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ZYBaseViewController.h
 //  ReactiveCocoaDemo
 //
 //  Created by 王志盼 on 16/8/31.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ZYBaseViewController : UIViewController
 
 @end
-
