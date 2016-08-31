@@ -13,7 +13,6 @@
 		09C4C77B1D76BBC3002B21E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C4C7791D76BBC3002B21E2 /* Main.storyboard */; };
 		09C4C77E1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C77C1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld */; };
 		09C4C7801D76BBC3002B21E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C4C77F1D76BBC3002B21E2 /* Assets.xcassets */; };
-		09C4C7831D76BBC3002B21E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C4C7811D76BBC3002B21E2 /* LaunchScreen.storyboard */; };
 		09C4C78E1D76BBC3002B21E2 /* ReactiveCocoaDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C78D1D76BBC3002B21E2 /* ReactiveCocoaDemoTests.m */; };
 		09C4C7991D76BBC3002B21E2 /* ReactiveCocoaDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C7981D76BBC3002B21E2 /* ReactiveCocoaDemoUITests.m */; };
 		5761515A04C2DD57E60C519B /* Pods_ReactiveCocoaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E8596DD081B8CC055D0426 /* Pods_ReactiveCocoaDemo.framework */; };
@@ -46,7 +45,6 @@
 		09C4C77A1D76BBC3002B21E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09C4C77D1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReactiveCocoaDemo.xcdatamodel; sourceTree = "<group>"; };
 		09C4C77F1D76BBC3002B21E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		09C4C7821D76BBC3002B21E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09C4C7841D76BBC3002B21E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09C4C7891D76BBC3002B21E2 /* ReactiveCocoaDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveCocoaDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C4C78D1D76BBC3002B21E2 /* ReactiveCocoaDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactiveCocoaDemoTests.m; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				09C4C77F1D76BBC3002B21E2 /* Assets.xcassets */,
-				09C4C7811D76BBC3002B21E2 /* LaunchScreen.storyboard */,
 				09C4C7841D76BBC3002B21E2 /* Info.plist */,
 				09C4C77C1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld */,
 				09C4C7711D76BBC3002B21E2 /* main.m */,
@@ -240,11 +237,13 @@
 		09C4C7651D76BBC3002B21E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZY;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "王志盼";
 				TargetAttributes = {
 					09C4C76C1D76BBC3002B21E2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = T6FCKHRT95;
 					};
 					09C4C7881D76BBC3002B21E2 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -281,7 +280,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09C4C7831D76BBC3002B21E2 /* LaunchScreen.storyboard in Resources */,
 				09C4C7801D76BBC3002B21E2 /* Assets.xcassets in Resources */,
 				09C4C77B1D76BBC3002B21E2 /* Main.storyboard in Resources */,
 			);
@@ -403,14 +401,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		09C4C7811D76BBC3002B21E2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09C4C7821D76BBC3002B21E2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -503,9 +493,12 @@
 			baseConfigurationReference = 51738A77BF3B86FC7CCBF3EE /* Pods-ReactiveCocoaDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ReactiveCocoaDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-111.ReactiveCocoaDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chutong.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -515,9 +508,12 @@
 			baseConfigurationReference = BC4121602238815D3BD4A088 /* Pods-ReactiveCocoaDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ReactiveCocoaDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-111.ReactiveCocoaDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chutong.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
