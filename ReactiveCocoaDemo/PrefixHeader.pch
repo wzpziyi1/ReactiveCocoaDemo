@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  ReactiveCocoaDemo
+//
+//  Created by 王志盼 on 16/8/31.
+//  Copyright © 2016年 王志盼. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "ReactiveCocoa.h"
+
+#endif /* PrefixHeader_pch */
