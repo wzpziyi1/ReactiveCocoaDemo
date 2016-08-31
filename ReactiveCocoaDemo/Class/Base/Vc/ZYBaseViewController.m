@@ -10,13 +10,23 @@
 
 @interface ZYBaseViewController ()
 
+@property (nonatomic, strong) UITapGestureRecognizer *endEdtingRecognizer;
+
 @end
 
 @implementation ZYBaseViewController
 
+#pragma mark ----life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    [self.view addGestureRecognizer:self.endEdtingRecognizer];
+    
+    [self layoutPageSubviews];
+    [self bindSignal];
+    [self dealEvent];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +34,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark ----must implement
+
+- (void)layoutPageSubviews
+{
+    
 }
-*/
+
+- (void)bindSignal
+{
+    
+}
+
+- (void)dealEvent
+{
+    [[self.endEdtingRecognizer rac_gestureSignal] subscribeNext:^(UITapGestureRecognizer *recognizer) {
+        [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+    }];
+}
+
+#pragma mark ---- getter && setter
+
+- (UITapGestureRecognizer *)endEdtingRecognizer
+{
+    if (!_endEdtingRecognizer)
+    {
+        _endEdtingRecognizer = [[UITapGestureRecognizer alloc] init];
+    }
+    return _endEdtingRecognizer;
+}
+
 
 @end

@@ -10,4 +10,11 @@
 
 @interface ZYBaseViewController : UIViewController
 
++ (instancetype)viewController;
+
+- (void)layoutPageSubviews;
+
+- (void)bindSignal;
+
+- (void)dealEvent;
 @end

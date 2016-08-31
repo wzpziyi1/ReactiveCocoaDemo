@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 097317E21D77187E007D8082 /* ZYLoginVc.m */; };
+		097317E51D77187E007D8082 /* ZYLoginVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097317E31D77187E007D8082 /* ZYLoginVc.xib */; };
 		09C4C7721D76BBC3002B21E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C7711D76BBC3002B21E2 /* main.m */; };
 		09C4C7751D76BBC3002B21E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C7741D76BBC3002B21E2 /* AppDelegate.m */; };
 		09C4C77E1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C77C1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		097317E11D77187E007D8082 /* ZYLoginVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLoginVc.h; sourceTree = "<group>"; };
+		097317E21D77187E007D8082 /* ZYLoginVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLoginVc.m; sourceTree = "<group>"; };
+		097317E31D77187E007D8082 /* ZYLoginVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYLoginVc.xib; sourceTree = "<group>"; };
 		09C4C76D1D76BBC3002B21E2 /* ReactiveCocoaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveCocoaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C4C7711D76BBC3002B21E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09C4C7731D76BBC3002B21E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -155,8 +160,10 @@
 			isa = PBXGroup;
 			children = (
 				09C4C7AD1D76D21C002B21E2 /* Base */,
-				09C4C7A91D76D13D002B21E2 /* Discover */,
+				09C4C7BF1D76D467002B21E2 /* Login */,
+				09C4C7C01D76D481002B21E2 /* NewFeature */,
 				09C4C7AA1D76D13D002B21E2 /* Home */,
+				09C4C7A91D76D13D002B21E2 /* Discover */,
 				09C4C7AB1D76D13D002B21E2 /* Message */,
 				09C4C7AC1D76D13D002B21E2 /* Mine */,
 			);
@@ -194,8 +201,8 @@
 		09C4C7AD1D76D21C002B21E2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				09C4C7AE1D76D259002B21E2 /* Model */,
 				09C4C7AF1D76D259002B21E2 /* Protocol */,
+				09C4C7AE1D76D259002B21E2 /* Model */,
 				09C4C7B01D76D259002B21E2 /* Vc */,
 				09C4C7B11D76D259002B21E2 /* View */,
 				09C4C7B21D76D259002B21E2 /* ViewModel */,
@@ -240,6 +247,39 @@
 			children = (
 				09C4C7BC1D76D397002B21E2 /* ZYBaseViewModel.h */,
 				09C4C7BD1D76D397002B21E2 /* ZYBaseViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		09C4C7BF1D76D467002B21E2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				09C4C7C21D76DDFA002B21E2 /* Vc */,
+				09C4C7C31D76DDFA002B21E2 /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		09C4C7C01D76D481002B21E2 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		09C4C7C21D76DDFA002B21E2 /* Vc */ = {
+			isa = PBXGroup;
+			children = (
+				097317E11D77187E007D8082 /* ZYLoginVc.h */,
+				097317E21D77187E007D8082 /* ZYLoginVc.m */,
+				097317E31D77187E007D8082 /* ZYLoginVc.xib */,
+			);
+			path = Vc;
+			sourceTree = "<group>";
+		};
+		09C4C7C31D76DDFA002B21E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -370,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09C4C7801D76BBC3002B21E2 /* Assets.xcassets in Resources */,
+				097317E51D77187E007D8082 /* ZYLoginVc.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +485,7 @@
 			files = (
 				09C4C7BB1D76D348002B21E2 /* ZYBaseViewController.m in Sources */,
 				09C4C7B51D76D317002B21E2 /* ZYBaseEntity.m in Sources */,
+				097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */,
 				09C4C7BE1D76D397002B21E2 /* ZYBaseViewModel.m in Sources */,
 				09C4C7751D76BBC3002B21E2 /* AppDelegate.m in Sources */,
 				09C4C7721D76BBC3002B21E2 /* main.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ZYLoginVc.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    
+    ZYLoginVc *vc = [ZYLoginVc viewController];
+    
+    self.window.rootViewController = vc;
+    
     return YES;
 }
 
