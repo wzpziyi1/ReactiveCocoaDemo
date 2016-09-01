@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 097317E21D77187E007D8082 /* ZYLoginVc.m */; };
 		097317E51D77187E007D8082 /* ZYLoginVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097317E31D77187E007D8082 /* ZYLoginVc.xib */; };
+		098685131D77D97C006AB774 /* UIView+ZYPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 098685121D77D97C006AB774 /* UIView+ZYPosition.m */; };
+		098685161D77DB60006AB774 /* ZYFilePathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 098685151D77DB60006AB774 /* ZYFilePathUtil.m */; };
+		0986851C1D77E209006AB774 /* NSString+ZYAccessPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986851B1D77E209006AB774 /* NSString+ZYAccessPath.m */; };
+		0986851F1D77E644006AB774 /* ZYDefaultAccessUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986851E1D77E644006AB774 /* ZYDefaultAccessUtil.m */; };
 		09C4C7721D76BBC3002B21E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C7711D76BBC3002B21E2 /* main.m */; };
 		09C4C7751D76BBC3002B21E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C7741D76BBC3002B21E2 /* AppDelegate.m */; };
 		09C4C77E1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C77C1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld */; };
@@ -42,6 +46,19 @@
 		097317E11D77187E007D8082 /* ZYLoginVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLoginVc.h; sourceTree = "<group>"; };
 		097317E21D77187E007D8082 /* ZYLoginVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLoginVc.m; sourceTree = "<group>"; };
 		097317E31D77187E007D8082 /* ZYLoginVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYLoginVc.xib; sourceTree = "<group>"; };
+		0986850B1D77D663006AB774 /* ZYAPIMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAPIMacro.h; sourceTree = "<group>"; };
+		0986850C1D77D697006AB774 /* ZYColorMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYColorMacro.h; sourceTree = "<group>"; };
+		0986850D1D77D6A9006AB774 /* ZYNotificationMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYNotificationMacro.h; sourceTree = "<group>"; };
+		0986850E1D77D6BD006AB774 /* ZYParamKeyMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYParamKeyMacro.h; sourceTree = "<group>"; };
+		0986850F1D77D6F3006AB774 /* ZYCommonKeyMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCommonKeyMacro.h; sourceTree = "<group>"; };
+		098685111D77D97C006AB774 /* UIView+ZYPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZYPosition.h"; sourceTree = "<group>"; };
+		098685121D77D97C006AB774 /* UIView+ZYPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZYPosition.m"; sourceTree = "<group>"; };
+		098685141D77DB60006AB774 /* ZYFilePathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYFilePathUtil.h; sourceTree = "<group>"; };
+		098685151D77DB60006AB774 /* ZYFilePathUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYFilePathUtil.m; sourceTree = "<group>"; };
+		0986851A1D77E209006AB774 /* NSString+ZYAccessPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZYAccessPath.h"; sourceTree = "<group>"; };
+		0986851B1D77E209006AB774 /* NSString+ZYAccessPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZYAccessPath.m"; sourceTree = "<group>"; };
+		0986851D1D77E644006AB774 /* ZYDefaultAccessUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYDefaultAccessUtil.h; sourceTree = "<group>"; };
+		0986851E1D77E644006AB774 /* ZYDefaultAccessUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYDefaultAccessUtil.m; sourceTree = "<group>"; };
 		09C4C76D1D76BBC3002B21E2 /* ReactiveCocoaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveCocoaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C4C7711D76BBC3002B21E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09C4C7731D76BBC3002B21E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +110,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		098684FF1D77D3DE006AB774 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				098685001D77D3F1006AB774 /* DataAccess */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		098685001D77D3F1006AB774 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				098685141D77DB60006AB774 /* ZYFilePathUtil.h */,
+				098685151D77DB60006AB774 /* ZYFilePathUtil.m */,
+				0986851D1D77E644006AB774 /* ZYDefaultAccessUtil.h */,
+				0986851E1D77E644006AB774 /* ZYDefaultAccessUtil.m */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		098685011D77D433006AB774 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				0986850B1D77D663006AB774 /* ZYAPIMacro.h */,
+				0986850C1D77D697006AB774 /* ZYColorMacro.h */,
+				0986850D1D77D6A9006AB774 /* ZYNotificationMacro.h */,
+				0986850E1D77D6BD006AB774 /* ZYParamKeyMacro.h */,
+				0986850F1D77D6F3006AB774 /* ZYCommonKeyMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		098685101D77D769006AB774 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				098685111D77D97C006AB774 /* UIView+ZYPosition.h */,
+				098685121D77D97C006AB774 /* UIView+ZYPosition.m */,
+				0986851A1D77E209006AB774 /* NSString+ZYAccessPath.h */,
+				0986851B1D77E209006AB774 /* NSString+ZYAccessPath.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		09C4C7641D76BBC3002B21E2 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +218,8 @@
 		09C4C7A61D76BEFB002B21E2 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				098685011D77D433006AB774 /* Macro */,
+				098684FF1D77D3DE006AB774 /* Utils */,
 				09C4C7AD1D76D21C002B21E2 /* Base */,
 				09C4C7BF1D76D467002B21E2 /* Login */,
 				09C4C7C01D76D481002B21E2 /* NewFeature */,
@@ -202,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				09C4C7AF1D76D259002B21E2 /* Protocol */,
+				098685101D77D769006AB774 /* Category */,
 				09C4C7AE1D76D259002B21E2 /* Model */,
 				09C4C7B01D76D259002B21E2 /* Vc */,
 				09C4C7B11D76D259002B21E2 /* View */,
@@ -484,12 +546,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				09C4C7BB1D76D348002B21E2 /* ZYBaseViewController.m in Sources */,
+				0986851C1D77E209006AB774 /* NSString+ZYAccessPath.m in Sources */,
 				09C4C7B51D76D317002B21E2 /* ZYBaseEntity.m in Sources */,
+				098685131D77D97C006AB774 /* UIView+ZYPosition.m in Sources */,
 				097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */,
 				09C4C7BE1D76D397002B21E2 /* ZYBaseViewModel.m in Sources */,
 				09C4C7751D76BBC3002B21E2 /* AppDelegate.m in Sources */,
+				0986851F1D77E644006AB774 /* ZYDefaultAccessUtil.m in Sources */,
 				09C4C7721D76BBC3002B21E2 /* main.m in Sources */,
 				09C4C77E1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld in Sources */,
+				098685161D77DB60006AB774 /* ZYFilePathUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +681,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ReactiveCocoaDemo/PrefixHeader.pch;
@@ -632,6 +699,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ReactiveCocoaDemo/PrefixHeader.pch;

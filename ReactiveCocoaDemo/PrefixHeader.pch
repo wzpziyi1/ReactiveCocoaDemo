@@ -10,5 +10,22 @@
 #define PrefixHeader_pch
 
 #import "ReactiveCocoa.h"
+#import "UIView+ZYPosition.h"
+#import "ZYFilePathUtil.h"
+#import "ZYAPIMacro.h"
+#import "ZYColorMacro.h"
+#import "ZYNotificationMacro.h"
+#import "ZYParamKeyMacro.h"
+#import "ZYCommonKeyMacro.h"
+#import "NSString+ZYAccessPath.h"
 
 #endif /* PrefixHeader_pch */
+
+
+#ifdef DEBUG
+
+#define ZYLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+
+#else
+#define DLog( s, ... )
+#endif
