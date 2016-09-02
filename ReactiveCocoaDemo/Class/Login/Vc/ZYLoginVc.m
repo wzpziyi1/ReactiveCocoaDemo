@@ -7,6 +7,7 @@
 //
 
 #import "ZYLoginVc.h"
+#import "ZYUrlAccessUtil.h"
 
 @interface ZYLoginVc () <UIWebViewDelegate>
 @property (nonatomic, strong) UIWebView *webView;
@@ -21,6 +22,9 @@
     // Do any additional setup after loading the view from its nib.
     
     [self.view addSubview:self.webView];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +54,26 @@
 - (void)dealEvent
 {
     [super dealEvent];
+}
+
+
+#pragma mark ----webViewDelegate
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    return YES;
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
+{
+    
 }
 
 #pragma mark ----setter && getter

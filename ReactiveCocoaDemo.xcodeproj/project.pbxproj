@@ -13,6 +13,8 @@
 		098685161D77DB60006AB774 /* ZYFilePathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 098685151D77DB60006AB774 /* ZYFilePathUtil.m */; };
 		0986851C1D77E209006AB774 /* NSString+ZYAccessPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986851B1D77E209006AB774 /* NSString+ZYAccessPath.m */; };
 		0986851F1D77E644006AB774 /* ZYDefaultAccessUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986851E1D77E644006AB774 /* ZYDefaultAccessUtil.m */; };
+		0989A07D1D7832530050BA22 /* ZYUrlAccessUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0989A07C1D7832530050BA22 /* ZYUrlAccessUtil.m */; };
+		0989A0811D7848D90050BA22 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0989A0801D7848D90050BA22 /* NSString+Hashing.m */; };
 		09C4C7721D76BBC3002B21E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C7711D76BBC3002B21E2 /* main.m */; };
 		09C4C7751D76BBC3002B21E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C7741D76BBC3002B21E2 /* AppDelegate.m */; };
 		09C4C77E1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09C4C77C1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld */; };
@@ -59,6 +61,10 @@
 		0986851B1D77E209006AB774 /* NSString+ZYAccessPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZYAccessPath.m"; sourceTree = "<group>"; };
 		0986851D1D77E644006AB774 /* ZYDefaultAccessUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYDefaultAccessUtil.h; sourceTree = "<group>"; };
 		0986851E1D77E644006AB774 /* ZYDefaultAccessUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYDefaultAccessUtil.m; sourceTree = "<group>"; };
+		0989A07B1D7832530050BA22 /* ZYUrlAccessUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYUrlAccessUtil.h; sourceTree = "<group>"; };
+		0989A07C1D7832530050BA22 /* ZYUrlAccessUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYUrlAccessUtil.m; sourceTree = "<group>"; };
+		0989A07F1D7848D90050BA22 /* NSString+Hashing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hashing.h"; sourceTree = "<group>"; };
+		0989A0801D7848D90050BA22 /* NSString+Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hashing.m"; sourceTree = "<group>"; };
 		09C4C76D1D76BBC3002B21E2 /* ReactiveCocoaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveCocoaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C4C7711D76BBC3002B21E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09C4C7731D76BBC3002B21E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +131,8 @@
 				098685151D77DB60006AB774 /* ZYFilePathUtil.m */,
 				0986851D1D77E644006AB774 /* ZYDefaultAccessUtil.h */,
 				0986851E1D77E644006AB774 /* ZYDefaultAccessUtil.m */,
+				0989A07B1D7832530050BA22 /* ZYUrlAccessUtil.h */,
+				0989A07C1D7832530050BA22 /* ZYUrlAccessUtil.m */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -150,6 +158,30 @@
 				0986851B1D77E209006AB774 /* NSString+ZYAccessPath.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		098685201D782CD6006AB774 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				0989A07E1D7848D90050BA22 /* MD5 */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		0989A0771D782F140050BA22 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0989A07E1D7848D90050BA22 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				0989A07F1D7848D90050BA22 /* NSString+Hashing.h */,
+				0989A0801D7848D90050BA22 /* NSString+Hashing.m */,
+			);
+			path = MD5;
 			sourceTree = "<group>";
 		};
 		09C4C7641D76BBC3002B21E2 = {
@@ -218,6 +250,7 @@
 		09C4C7A61D76BEFB002B21E2 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				098685201D782CD6006AB774 /* ThirdParty */,
 				098685011D77D433006AB774 /* Macro */,
 				098684FF1D77D3DE006AB774 /* Utils */,
 				09C4C7AD1D76D21C002B21E2 /* Base */,
@@ -262,6 +295,7 @@
 		09C4C7AD1D76D21C002B21E2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				0989A0771D782F140050BA22 /* Network */,
 				09C4C7AF1D76D259002B21E2 /* Protocol */,
 				098685101D77D769006AB774 /* Category */,
 				09C4C7AE1D76D259002B21E2 /* Model */,
@@ -545,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0989A07D1D7832530050BA22 /* ZYUrlAccessUtil.m in Sources */,
 				09C4C7BB1D76D348002B21E2 /* ZYBaseViewController.m in Sources */,
 				0986851C1D77E209006AB774 /* NSString+ZYAccessPath.m in Sources */,
 				09C4C7B51D76D317002B21E2 /* ZYBaseEntity.m in Sources */,
@@ -552,6 +587,7 @@
 				097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */,
 				09C4C7BE1D76D397002B21E2 /* ZYBaseViewModel.m in Sources */,
 				09C4C7751D76BBC3002B21E2 /* AppDelegate.m in Sources */,
+				0989A0811D7848D90050BA22 /* NSString+Hashing.m in Sources */,
 				0986851F1D77E644006AB774 /* ZYDefaultAccessUtil.m in Sources */,
 				09C4C7721D76BBC3002B21E2 /* main.m in Sources */,
 				09C4C77E1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld in Sources */,
