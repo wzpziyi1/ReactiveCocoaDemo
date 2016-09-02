@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09030CB41D7925AE00106B5E /* ZYHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 09030CB31D7925AE00106B5E /* ZYHttpClient.m */; };
+		09030CB61D7945A000106B5E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09030CB51D7945A000106B5E /* SystemConfiguration.framework */; };
+		096EC39E1D79549300580848 /* ZYRequestHander.m in Sources */ = {isa = PBXBuildFile; fileRef = 096EC39D1D79549300580848 /* ZYRequestHander.m */; };
 		097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 097317E21D77187E007D8082 /* ZYLoginVc.m */; };
 		097317E51D77187E007D8082 /* ZYLoginVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097317E31D77187E007D8082 /* ZYLoginVc.xib */; };
 		098685131D77D97C006AB774 /* UIView+ZYPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 098685121D77D97C006AB774 /* UIView+ZYPosition.m */; };
@@ -45,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09030CB21D7925AE00106B5E /* ZYHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYHttpClient.h; sourceTree = "<group>"; };
+		09030CB31D7925AE00106B5E /* ZYHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYHttpClient.m; sourceTree = "<group>"; };
+		09030CB51D7945A000106B5E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		096EC39C1D79549300580848 /* ZYRequestHander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYRequestHander.h; sourceTree = "<group>"; };
+		096EC39D1D79549300580848 /* ZYRequestHander.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYRequestHander.m; sourceTree = "<group>"; };
 		097317E11D77187E007D8082 /* ZYLoginVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLoginVc.h; sourceTree = "<group>"; };
 		097317E21D77187E007D8082 /* ZYLoginVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLoginVc.m; sourceTree = "<group>"; };
 		097317E31D77187E007D8082 /* ZYLoginVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYLoginVc.xib; sourceTree = "<group>"; };
@@ -95,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09030CB61D7945A000106B5E /* SystemConfiguration.framework in Frameworks */,
 				5761515A04C2DD57E60C519B /* Pods_ReactiveCocoaDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +180,10 @@
 		0989A0771D782F140050BA22 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				09030CB21D7925AE00106B5E /* ZYHttpClient.h */,
+				09030CB31D7925AE00106B5E /* ZYHttpClient.m */,
+				096EC39C1D79549300580848 /* ZYRequestHander.h */,
+				096EC39D1D79549300580848 /* ZYRequestHander.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -383,6 +396,7 @@
 		79DD8D2F1FDEF9F0D43400E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09030CB51D7945A000106B5E /* SystemConfiguration.framework */,
 				D2E8596DD081B8CC055D0426 /* Pods_ReactiveCocoaDemo.framework */,
 			);
 			name = Frameworks;
@@ -580,11 +594,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0989A07D1D7832530050BA22 /* ZYUrlAccessUtil.m in Sources */,
+				09030CB41D7925AE00106B5E /* ZYHttpClient.m in Sources */,
 				09C4C7BB1D76D348002B21E2 /* ZYBaseViewController.m in Sources */,
 				0986851C1D77E209006AB774 /* NSString+ZYAccessPath.m in Sources */,
 				09C4C7B51D76D317002B21E2 /* ZYBaseEntity.m in Sources */,
 				098685131D77D97C006AB774 /* UIView+ZYPosition.m in Sources */,
 				097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */,
+				096EC39E1D79549300580848 /* ZYRequestHander.m in Sources */,
 				09C4C7BE1D76D397002B21E2 /* ZYBaseViewModel.m in Sources */,
 				09C4C7751D76BBC3002B21E2 /* AppDelegate.m in Sources */,
 				0989A0811D7848D90050BA22 /* NSString+Hashing.m in Sources */,

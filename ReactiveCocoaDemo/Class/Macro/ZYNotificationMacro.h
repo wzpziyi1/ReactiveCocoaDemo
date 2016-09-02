@@ -9,5 +9,6 @@
 #ifndef ZYNotificationMacro_h
 #define ZYNotificationMacro_h
 
+#define kNetworkErrorNotification @"kNetworkErrorNotification"
 
 #endif /* ZYNotificationMacro_h */
