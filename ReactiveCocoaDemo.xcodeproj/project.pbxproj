@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		09030CB41D7925AE00106B5E /* ZYHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 09030CB31D7925AE00106B5E /* ZYHttpClient.m */; };
 		09030CB61D7945A000106B5E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09030CB51D7945A000106B5E /* SystemConfiguration.framework */; };
+		0948B7F51D7AA35D00524F98 /* ZYLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B7F41D7AA35D00524F98 /* ZYLoginViewModel.m */; };
+		0948B7FC1D7BF8F000524F98 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B7F81D7BF8F000524F98 /* MBProgressHUD+MJ.m */; };
+		0948B7FD1D7BF8F000524F98 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0948B7F91D7BF8F000524F98 /* MBProgressHUD.bundle */; };
+		0948B7FE1D7BF8F000524F98 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B7FB1D7BF8F000524F98 /* MBProgressHUD.m */; };
+		0948B8021D7BFCA400524F98 /* ZYTokenEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B8011D7BFCA400524F98 /* ZYTokenEntity.m */; };
+		0948B8051D7BFDB500524F98 /* NSObject+PropertyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B8041D7BFDB500524F98 /* NSObject+PropertyCode.m */; };
 		096EC39E1D79549300580848 /* ZYRequestHander.m in Sources */ = {isa = PBXBuildFile; fileRef = 096EC39D1D79549300580848 /* ZYRequestHander.m */; };
 		097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 097317E21D77187E007D8082 /* ZYLoginVc.m */; };
 		097317E51D77187E007D8082 /* ZYLoginVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097317E31D77187E007D8082 /* ZYLoginVc.xib */; };
@@ -51,6 +57,17 @@
 		09030CB21D7925AE00106B5E /* ZYHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYHttpClient.h; sourceTree = "<group>"; };
 		09030CB31D7925AE00106B5E /* ZYHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYHttpClient.m; sourceTree = "<group>"; };
 		09030CB51D7945A000106B5E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0948B7F31D7AA35D00524F98 /* ZYLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLoginViewModel.h; sourceTree = "<group>"; };
+		0948B7F41D7AA35D00524F98 /* ZYLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLoginViewModel.m; sourceTree = "<group>"; };
+		0948B7F71D7BF8F000524F98 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		0948B7F81D7BF8F000524F98 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		0948B7F91D7BF8F000524F98 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		0948B7FA1D7BF8F000524F98 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		0948B7FB1D7BF8F000524F98 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		0948B8001D7BFCA400524F98 /* ZYTokenEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTokenEntity.h; sourceTree = "<group>"; };
+		0948B8011D7BFCA400524F98 /* ZYTokenEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTokenEntity.m; sourceTree = "<group>"; };
+		0948B8031D7BFDB500524F98 /* NSObject+PropertyCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertyCode.h"; sourceTree = "<group>"; };
+		0948B8041D7BFDB500524F98 /* NSObject+PropertyCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PropertyCode.m"; sourceTree = "<group>"; };
 		096EC39C1D79549300580848 /* ZYRequestHander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYRequestHander.h; sourceTree = "<group>"; };
 		096EC39D1D79549300580848 /* ZYRequestHander.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYRequestHander.m; sourceTree = "<group>"; };
 		097317E11D77187E007D8082 /* ZYLoginVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLoginVc.h; sourceTree = "<group>"; };
@@ -125,6 +142,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0948B7F61D7BF8F000524F98 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				0948B7F71D7BF8F000524F98 /* MBProgressHUD+MJ.h */,
+				0948B7F81D7BF8F000524F98 /* MBProgressHUD+MJ.m */,
+				0948B7F91D7BF8F000524F98 /* MBProgressHUD.bundle */,
+				0948B7FA1D7BF8F000524F98 /* MBProgressHUD.h */,
+				0948B7FB1D7BF8F000524F98 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		0948B7FF1D7BFC5300524F98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0948B8001D7BFCA400524F98 /* ZYTokenEntity.h */,
+				0948B8011D7BFCA400524F98 /* ZYTokenEntity.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		098684FF1D77D3DE006AB774 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +199,8 @@
 		098685101D77D769006AB774 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0948B8031D7BFDB500524F98 /* NSObject+PropertyCode.h */,
+				0948B8041D7BFDB500524F98 /* NSObject+PropertyCode.m */,
 				098685111D77D97C006AB774 /* UIView+ZYPosition.h */,
 				098685121D77D97C006AB774 /* UIView+ZYPosition.m */,
 				0986851A1D77E209006AB774 /* NSString+ZYAccessPath.h */,
@@ -172,6 +212,7 @@
 		098685201D782CD6006AB774 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				0948B7F61D7BF8F000524F98 /* MBProgressHUD */,
 				0989A07E1D7848D90050BA22 /* MD5 */,
 			);
 			path = ThirdParty;
@@ -363,6 +404,7 @@
 		09C4C7BF1D76D467002B21E2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				0948B7FF1D7BFC5300524F98 /* Model */,
 				09C4C7C21D76DDFA002B21E2 /* Vc */,
 				09C4C7C31D76DDFA002B21E2 /* ViewModel */,
 			);
@@ -389,6 +431,8 @@
 		09C4C7C31D76DDFA002B21E2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0948B7F31D7AA35D00524F98 /* ZYLoginViewModel.h */,
+				0948B7F41D7AA35D00524F98 /* ZYLoginViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -521,6 +565,7 @@
 			files = (
 				09C4C7801D76BBC3002B21E2 /* Assets.xcassets in Resources */,
 				097317E51D77187E007D8082 /* ZYLoginVc.xib in Resources */,
+				0948B7FD1D7BF8F000524F98 /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0989A07D1D7832530050BA22 /* ZYUrlAccessUtil.m in Sources */,
+				0948B8051D7BFDB500524F98 /* NSObject+PropertyCode.m in Sources */,
 				09030CB41D7925AE00106B5E /* ZYHttpClient.m in Sources */,
 				09C4C7BB1D76D348002B21E2 /* ZYBaseViewController.m in Sources */,
 				0986851C1D77E209006AB774 /* NSString+ZYAccessPath.m in Sources */,
@@ -601,9 +647,13 @@
 				098685131D77D97C006AB774 /* UIView+ZYPosition.m in Sources */,
 				097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */,
 				096EC39E1D79549300580848 /* ZYRequestHander.m in Sources */,
+				0948B8021D7BFCA400524F98 /* ZYTokenEntity.m in Sources */,
+				0948B7FC1D7BF8F000524F98 /* MBProgressHUD+MJ.m in Sources */,
+				0948B7F51D7AA35D00524F98 /* ZYLoginViewModel.m in Sources */,
 				09C4C7BE1D76D397002B21E2 /* ZYBaseViewModel.m in Sources */,
 				09C4C7751D76BBC3002B21E2 /* AppDelegate.m in Sources */,
 				0989A0811D7848D90050BA22 /* NSString+Hashing.m in Sources */,
+				0948B7FE1D7BF8F000524F98 /* MBProgressHUD.m in Sources */,
 				0986851F1D77E644006AB774 /* ZYDefaultAccessUtil.m in Sources */,
 				09C4C7721D76BBC3002B21E2 /* main.m in Sources */,
 				09C4C77E1D76BBC3002B21E2 /* ReactiveCocoaDemo.xcdatamodeld in Sources */,

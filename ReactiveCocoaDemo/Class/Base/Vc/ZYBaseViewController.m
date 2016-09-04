@@ -24,9 +24,6 @@
 
     [self.view addGestureRecognizer:self.endEdtingRecognizer];
     
-    [self layoutPageSubviews];
-    [self bindSignal];
-    [self dealEvent];
 }
 
 - (void)didReceiveMemoryWarning {

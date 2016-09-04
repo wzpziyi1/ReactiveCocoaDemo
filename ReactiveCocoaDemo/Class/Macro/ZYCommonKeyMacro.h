@@ -9,6 +9,8 @@
 #ifndef ZYCommonKeyMacro_h
 #define ZYCommonKeyMacro_h
 
+#define ZYWeakSelf __weak typeof(self) weakSelf = self
+
 #define kScreenH [UIScreen mainScreen].bounds.size.height
 
 #define kScreenW [UIScreen mainScreen].bounds.size.width

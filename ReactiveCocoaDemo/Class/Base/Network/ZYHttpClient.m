@@ -33,7 +33,7 @@ static id _install = nil;
 {
     if (self = [super init])
     {
-        
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.weibo.com/"]];
         self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/plain",@"text/json",@"application/json", nil];
@@ -176,14 +176,7 @@ static id _install = nil;
 
 #pragma mark ----getter && setter
 
-- (AFHTTPSessionManager *)manager
-{
-    if (_manager == nil)
-    {
-        _manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.weibo.com/"]];
-    }
-    return _manager;
-}
+
 
 
 @end

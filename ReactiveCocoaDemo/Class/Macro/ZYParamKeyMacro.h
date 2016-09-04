@@ -9,7 +9,11 @@
 #ifndef ZYParamKeyMacro_h
 #define ZYParamKeyMacro_h
 
+#define kWeiboAppKey @"3722612068"
 
+#define kWeiboAppSecret @"dd877b1d3dadeb885597937e5e70a492"
+
+#define kWeiboCallBack @"http://www.cnblogs.com/"
 
 
 #endif /* ZYParamKeyMacro_h */
