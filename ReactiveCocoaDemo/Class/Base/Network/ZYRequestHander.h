@@ -36,14 +36,14 @@ typedef void(^CacheBlock)(id obj);
  *  字典参数的get请求
  *
  */
-- (void)executeGetRequestWithURL:(NSString *)url params:(NSDictionary *)params success:(SuccessBlock)success failed:(FailedBlock)failed;
+- (void)executeGetRequestWithURL:(NSString *)urlStr params:(NSDictionary *)params success:(SuccessBlock)success failure:(FailedBlock)failure;
 
 //带缓存的get请求，参数拼接到url后面
--(void)executeGetRequestWithURL:(NSString *)url cacheMark:(NSString *)cacheMark cache:(CacheBlock)cache success:(SuccessBlock)success failed:(FailedBlock)failed;
+-(void)executeGetRequestWithURL:(NSString *)urlStr cacheMark:(NSString *)cacheMark cache:(CacheBlock)cache success:(SuccessBlock)success failure:(FailedBlock)failure;
 
 
 //带url和参数封装的post
-- (void)executePostRequestWithURL:(NSString *)url params:(NSDictionary *)params success:(SuccessBlock)success failed:(FailedBlock)failed;
+- (void)executePostRequestWithURL:(NSString *)urlStr params:(NSDictionary *)params success:(SuccessBlock)success failure:(FailedBlock)failure;
 
 //图片上传
 - (void)uploadImageWithURL:(NSString *)urlString parameters:(id)parameters image:(UIImage *)image name:(NSString *)name fileName:(NSString *)fileName success:(void(^)(id obj))success failure:(void(^)(id obj))failure;

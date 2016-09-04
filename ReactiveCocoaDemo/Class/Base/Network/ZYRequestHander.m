@@ -44,59 +44,77 @@ static id _install = nil;
  *  字典参数的get请求
  *
  */
-- (void)executeGetRequestWithURL:(NSString *)url params:(NSDictionary *)params success:(SuccessBlock)success failed:(FailedBlock)failed
+- (void)executeGetRequestWithURL:(NSString *)urlStr params:(NSDictionary *)params success:(SuccessBlock)success failure:(FailedBlock)failure
 {
-    
+    [self executeRequestWithUrl:urlStr method:ZYHttpClientTypeGet success:^(id obj) {
+        if(success)
+        {
+            success(obj);
+        }
+    } failure:^(id obj) {
+        if(failure)
+        {
+            failure(obj);
+        }
+    }];
 }
 
 //带缓存的get请求
--(void)executeGetRequestWithURL:(NSString *)url cacheMark:(NSString *)cacheMark cache:(CacheBlock)cache success:(SuccessBlock)success failed:(FailedBlock)failed
+-(void)executeGetRequestWithURL:(NSString *)urlStr cacheMark:(NSString *)cacheMark cache:(CacheBlock)cache success:(SuccessBlock)success failure:(FailedBlock)failure
 {
     NSData *cacheData = nil;
     
     if (cacheMark)
     {
-        cacheData = [ZYUrlAccessUtil readDataFromFileByUrl:url];
+        cacheData = [ZYUrlAccessUtil readDataFromFileByUrl:urlStr];
     }
     
     if (cacheData)
     {
-        id responseObject = [NSKeyedUnarchiver unarchiveObjectWithData:cacheData];
+        id responseObject = [NSJSONSerialization JSONObjectWithData:cacheData options:NSJSONReadingMutableContainers error:nil];
         
         if (responseObject)
         {
-            if (cache)
-            {
-                cache(responseObject);
+            @try {
+                
+                NSString *request = [responseObject objectForKey:@"request"];
+                NSString *error_code = [responseObject objectForKey:@"error_code"];
+                NSString *error = [responseObject objectForKey:@"error"];
+                
+                if (error == nil || error.length == 0)
+                {
+                    if (cache)
+                    {
+                        cache(responseObject);
+                    }
+                    
+                }
+                else
+                {
+                    if (failure)
+                    {
+                        NSDictionary *errDic = @{@"error_code": error_code,
+                                                 @"error":error,
+                                                 @"request":request};
+                        failure(errDic);
+//                        ZYLog(@"返回会的数据是  is %@",error);
+                    }
+                }
+                
+            } @catch (NSException *exception) {
+                if (success)
+                {
+                    success(responseObject);
+                }
+            } @finally {
+                
             }
+            
         }
+        
     }
     
-    
-}
-
-
-
-
-//带url和参数封装的post
-- (void)executePostRequestWithURL:(NSString *)url params:(NSDictionary *)params success:(SuccessBlock)success failed:(FailedBlock)failed
-{
-    
-}
-
-//图片上传
-- (void)uploadImageWithURL:(NSString *)urlString parameters:(id)parameters image:(UIImage *)image name:(NSString *)name fileName:(NSString *)fileName success:(void(^)(id obj))success failure:(void(^)(id obj))failure
-{
-    
-}
-
-#pragma mark ----private
-//无缓存
--(void)executeRequestWithUrl:(NSString *)url method:(NSInteger)method success:(SuccessBlock)success failed:(FailedBlock)failed
-{
-    
-    
-    [self.client requestWithPath:url method:method parameters:nil prepareExecute:^{
+    [self.client requestWithPath:urlStr method:ZYHttpClientTypeGet parameters:nil prepareExecute:^{
         //
     } success:^(NSURLSessionDataTask *task, id responseObject) {
         
@@ -105,41 +123,219 @@ static id _install = nil;
         {
             @try {
                 
-                NSInteger errCode = [[responseObject objectForKey:@"errCode"] integerValue];
+                //做缓存,在返回正确地请求数据之后
+                NSData *cacheData = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
+                [ZYUrlAccessUtil saveUrl:[NSString stringWithFormat:@"%@",cacheMark] withData:cacheData];
+                
+                NSString *request = [responseObject objectForKey:@"request"];
+                NSString *error_code = [responseObject objectForKey:@"error_code"];
                 NSString *error = [responseObject objectForKey:@"error"];
                 
-                if (errCode == 0)
+                if (error == nil || error.length == 0)
                 {
                     if (success)
                     {
-                        id obj = [responseObject objectForKey:@"data"];
-                        success(obj);
+                        success(responseObject);
                     }
                 }
                 else
                 {
-                    if (failed)
+                    
+                    if (failure)
                     {
-                        id obj = [responseObject objectForKey:@"data"];
-                        
-                        NSDictionary *errDic = @{@"errCode":[NSNumber numberWithInteger:errCode],
+                        NSDictionary *errDic = @{@"error_code": error_code,
                                                  @"error":error,
-                                                 @"data":obj};
-                        failed(errDic);
+                                                 @"request":request};
+                        failure(errDic);
                     }
+                    
                 }
-                
             } @catch (NSException *exception) {
-                
+                if (success)
+                {
+                    success(responseObject);
+                }
             } @finally {
                 
             }
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         //
-        if (failed) {
+        if (failure)
+        {
+            NSDictionary *errDic = @{@"error":@"网络异常"};
+            failure(errDic);
+        }
+    }];
+    
+    
+}
+
+
+
+
+//带url和参数封装的post
+- (void)executePostRequestWithURL:(NSString *)urlStr params:(NSDictionary *)params success:(SuccessBlock)success failure:(FailedBlock)failure
+{
+    
+    [self.client requestWithPath:urlStr method:ZYHttpClientTypePost parameters:params prepareExecute:^{
+        //
+    } success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        //服务端返回成功，返回数据，否则返回异常信息
+        if (responseObject)
+        {
+            
+            @try {
+                NSString *request = [responseObject objectForKey:@"request"];
+                NSString *error_code = [responseObject objectForKey:@"error_code"];
+                NSString *error = [responseObject objectForKey:@"error"];
+                if (error == nil || error.length == 0)
+                {
+                    if (success)
+                    {
+                        
+                        NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil];
+                        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                        ZYLog(@"返回会的数据是  is %@",str);
+                        success(responseObject);
+                    }
+                }
+                else
+                {
+                    if (failure)
+                    {
+                        NSDictionary *errDic = @{@"error_code": error_code,
+                                                 @"error":error,
+                                                 @"request":request};
+                        ZYLog(@"返回会的数据是  is %@",error);
+                        failure(errDic);
+                    }
+                }
+                
+            } @catch (NSException *exception) {
+                if (success)
+                {
+                    success(responseObject);
+                }
+            } @finally {
+                
+            }
+        }
+    }failure:^(NSURLSessionDataTask *task, NSError *error) {
+        //
+        
+        if (failure) {
             NSDictionary *errDic = @{@"error":@"当前网络不通畅,请重试"};
-            failed(errDic);
+            ZYLog(@"返回会的数据是  is %@",[error localizedDescription]);
+            failure(errDic);
+            
+        }
+    }];
+}
+
+//图片上传
+- (void)uploadImageWithURL:(NSString *)urlString parameters:(id)parameters image:(UIImage *)image name:(NSString *)name fileName:(NSString *)fileName success:(void(^)(id obj))success failure:(void(^)(id obj))failure
+{
+    [self.client uploadWithURL:urlString parameters:parameters image:image name:name fileName:fileName success:^(id responseObject) {
+        
+        //服务端返回成功，返回数据，否则返回异常信息
+        if (responseObject)
+        {
+            @try {
+                
+                NSString *request = [responseObject objectForKey:@"request"];
+                NSString *error_code = [responseObject objectForKey:@"error_code"];
+                NSString *error = [responseObject objectForKey:@"error"];
+                
+                if (error == nil || error.length == 0)
+                {
+                    if (success)
+                    {
+                        success(responseObject);
+                    }
+                }
+                else
+                {
+                    if (failure)
+                    {
+                        
+                        NSDictionary *errDic = @{@"error_code": error_code,
+                                                 @"error":error,
+                                                 @"request":request};
+                        failure(errDic);
+                    }
+                }
+                
+            } @catch (NSException *exception) {
+                if (success)
+                {
+                    success(responseObject);
+                }
+            } @finally {
+                
+            }
+        }
+    } failure:^(NSError *error) {
+        if (failure)
+        {
+            failure(error);
+        }
+    }];
+}
+
+#pragma mark ----private
+//无缓存
+-(void)executeRequestWithUrl:(NSString *)urlStr method:(NSInteger)method success:(SuccessBlock)success failure:(FailedBlock)failure
+{
+    
+    
+    [self.client requestWithPath:urlStr method:method parameters:nil prepareExecute:^{
+        //
+    } success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        //服务端返回成功，返回数据，否则返回异常信息
+        if (responseObject)
+        {
+            @try {
+                
+                NSString *request = [responseObject objectForKey:@"request"];
+                NSString *error_code = [responseObject objectForKey:@"error_code"];
+                NSString *error = [responseObject objectForKey:@"error"];
+                
+                if (error == nil || error.length == 0)
+                {
+                    if (success)
+                    {
+                        success(responseObject);
+                    }
+                }
+                else
+                {
+                    if (failure)
+                    {
+                        
+                        NSDictionary *errDic = @{@"error_code": error_code,
+                                                 @"error":error,
+                                                 @"request":request};
+                        failure(errDic);
+                    }
+                }
+                
+            } @catch (NSException *exception) {
+                if (success)
+                {
+                    success(responseObject);
+                }
+            } @finally {
+                
+            }
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        //
+        if (failure) {
+            NSDictionary *errDic = @{@"error":@"当前网络不通畅,请重试"};
+            failure(errDic);
         }
     }];
     

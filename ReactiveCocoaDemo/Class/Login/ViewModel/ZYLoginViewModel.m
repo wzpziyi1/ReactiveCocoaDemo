@@ -9,6 +9,7 @@
 #import "ZYLoginViewModel.h"
 #import "ZYHttpClient.h"
 #import "ZYTokenEntity.h"
+#import "ZYRequestHander.h"
 
 @interface ZYLoginViewModel()
 @property (nonatomic, copy) NSString *weiboCode;
@@ -31,7 +32,8 @@
 - (void)commitInit
 {
     [RACObserve(self, weiboCode) subscribeNext:^(id x) {
-        [_tokenCommand execute:self.weiboCode];
+        ZYWeakSelf;
+        [self.tokenCommand execute:weakSelf.weiboCode];
     }];
     
     _tokenCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
@@ -44,15 +46,16 @@
                                };
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             
-            [[ZYHttpClient shareClient] requestWithPath:kApiAccessToken method:ZYHttpClientTypePost parameters:dict prepareExecute:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-                NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-                NSLog(@"%@", str);
-                [subscriber sendNext:responseObject];
+            [[ZYRequestHander shareHander] executePostRequestWithURL:kApiAccessToken params:dict success:^(id obj) {
+                
+                [subscriber sendNext:obj];
                 [subscriber sendCompleted];
                 
-            } failure:^(NSURLSessionDataTask *task, NSError *error) {
-                
+            } failure:^(id obj) {
+                [subscriber sendNext:obj[@"error"]];
+                [subscriber sendCompleted];
             }];
+
             
             return nil;
         }];

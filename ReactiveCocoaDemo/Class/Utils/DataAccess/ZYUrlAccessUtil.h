@@ -10,7 +10,7 @@
 
 @interface ZYUrlAccessUtil : NSObject
 
-+ (NSData *)readDataFromFileByUrl:(NSString *)url;
++ (NSData *)readDataFromFileByUrl:(NSString *)urlStr;
 
-+ (void)saveUrl:(NSString *)url withData:(NSData *)data;
++ (void)saveUrl:(NSString *)urlStr withData:(NSData *)data;
 @end

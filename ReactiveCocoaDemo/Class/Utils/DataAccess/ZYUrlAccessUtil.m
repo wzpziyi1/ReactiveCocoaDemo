@@ -10,9 +10,9 @@
 #import "NSString+Hashing.h"
 
 @implementation ZYUrlAccessUtil
-+ (NSData *)readDataFromFileByUrl:(NSString *)url
++ (NSData *)readDataFromFileByUrl:(NSString *)urlStr
 {
-    NSString *md5 = [url MD5Hash];
+    NSString *md5 = [urlStr MD5Hash];
     NSString *dir = [NSHomeDirectory() stringByAppendingFormat:@"%@",@"/Library/urlCaches"];
     NSString *path = [NSString stringWithFormat:@"%@/%@",dir,md5];
     
@@ -24,9 +24,9 @@
     return [NSData dataWithContentsOfFile:path];
 }
 
-+ (void)saveUrl:(NSString *)url withData:(NSData *)data
++ (void)saveUrl:(NSString *)urlStr withData:(NSData *)data
 {
-    NSString *md5 = [url MD5Hash];
+    NSString *md5 = [urlStr MD5Hash];
     NSString *dir = [NSHomeDirectory() stringByAppendingFormat:@"%@",@"/Library/urlCaches"];
     //DLog(@"缓存数据 dir %@",dir);
     
