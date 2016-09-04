@@ -27,7 +27,7 @@
 + (void)print;
 
 #pragma mark - UserDefaults存自定义对象
-+ (void) persistObjAsData:(id)encodableObject forKey:(NSString *)key;
++ (void)persistObjAsData:(id)encodableObject forKey:(NSString *)key;
 
 + (id) objectFromDataWithKey:(NSString*)key;
 

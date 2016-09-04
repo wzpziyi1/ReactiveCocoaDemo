@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZYBaseEntity : NSObject
+@interface ZYBaseEntity : NSObject<NSCoding>
 
 @end

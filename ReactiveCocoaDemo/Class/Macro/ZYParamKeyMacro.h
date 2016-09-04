@@ -15,5 +15,7 @@
 
 #define kWeiboCallBack @"http://www.cnblogs.com/"
 
+#define kTokenEntityKey @"kTokenEntityKey"
+
 
 #endif /* ZYParamKeyMacro_h */

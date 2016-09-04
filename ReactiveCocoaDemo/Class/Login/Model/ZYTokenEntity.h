@@ -13,4 +13,8 @@
 @property (nonatomic, copy) NSString *expires_in;
 @property (nonatomic, copy) NSString *remind_in;
 @property (nonatomic, copy) NSString *uid;
+@property (nonatomic, strong) NSDate *expireDate;
+
+- (BOOL)isTokenUseable;
+
 @end

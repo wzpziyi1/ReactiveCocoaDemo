@@ -10,10 +10,11 @@
 #import "ZYHttpClient.h"
 #import "ZYTokenEntity.h"
 #import "ZYRequestHander.h"
+#import "MJExtension.h"
 
 @interface ZYLoginViewModel()
 @property (nonatomic, copy) NSString *weiboCode;
-@property (nonatomic, copy) ZYTokenEntity *tokenEntity;
+
 @end
 
 @implementation ZYLoginViewModel
@@ -31,8 +32,9 @@
 
 - (void)commitInit
 {
+    ZYWeakSelf;
     [RACObserve(self, weiboCode) subscribeNext:^(id x) {
-        ZYWeakSelf;
+        
         [self.tokenCommand execute:weakSelf.weiboCode];
     }];
     
@@ -47,21 +49,30 @@
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             
             [[ZYRequestHander shareHander] executePostRequestWithURL:kApiAccessToken params:dict success:^(id obj) {
-                
-                [subscriber sendNext:obj];
+                ZYTokenEntity *entity = [ZYTokenEntity mj_objectWithKeyValues:obj];
+                [subscriber sendNext:entity];
                 [subscriber sendCompleted];
                 
             } failure:^(id obj) {
                 [subscriber sendNext:obj[@"error"]];
                 [subscriber sendCompleted];
             }];
-
-            
             return nil;
         }];
     }];
     
+    
     [[_tokenCommand.executionSignals switchToLatest] subscribeNext:^(id x) {
+        
+        if ([x isKindOfClass:[NSString class]])
+        {
+            [MBProgressHUD showError:x];
+        }
+        else
+        {
+            weakSelf.tokenEntity = (ZYTokenEntity *)x;
+            [ZYDefaultAccessUtil persistObjAsData:weakSelf.tokenEntity forKey:kTokenEntityKey];
+        }
         
     }];
     

@@ -8,7 +8,11 @@
 
 #import "ZYBaseViewModel.h"
 
+@class ZYTokenEntity;
+
 @interface ZYLoginViewModel : ZYBaseViewModel
+
+@property (nonatomic, strong) ZYTokenEntity *tokenEntity;
 
 @property (nonatomic, strong, readonly) NSURLRequest *request;
 
