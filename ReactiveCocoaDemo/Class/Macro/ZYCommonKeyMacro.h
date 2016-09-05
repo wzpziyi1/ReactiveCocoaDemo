@@ -23,4 +23,6 @@
 
 #define kTmpPath [ZYFilePathUtil tmpPath]
 
+
+
 #endif /* ZYCommonKeyMacro_h */

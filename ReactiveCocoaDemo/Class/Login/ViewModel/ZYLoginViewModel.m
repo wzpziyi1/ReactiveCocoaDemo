@@ -72,6 +72,7 @@
         {
             weakSelf.tokenEntity = (ZYTokenEntity *)x;
             [ZYDefaultAccessUtil persistObjAsData:weakSelf.tokenEntity forKey:kTokenEntityKey];
+//            [self resetRootVcWithParams:<#(NSDictionary *)#>];
         }
         
     }];
@@ -103,4 +104,12 @@
         return YES;
     };
 }
+
+#pragma mark ----ZYNavigationProtocol
+
+- (void)resetRootVcWithParams:(NSDictionary *)params
+{
+    
+}
+
 @end

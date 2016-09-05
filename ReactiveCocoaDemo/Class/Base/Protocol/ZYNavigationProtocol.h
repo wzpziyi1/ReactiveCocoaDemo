@@ -1,15 +1,16 @@
 //
-//  ZYBaseViewModel.h
+//  ZYNavigationProtocol.h
 //  ReactiveCocoaDemo
 //
-//  Created by 王志盼 on 16/8/31.
+//  Created by 王志盼 on 16/9/5.
 //  Copyright © 2016年 王志盼. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "ZYNavigationProtocol.h"
 
-@interface ZYBaseViewModel : NSObject <ZYNavigationProtocol>
+typedef void (^VoidBlock)();
+
+@protocol ZYNavigationProtocol <NSObject>
 
 - (void)pushVcWithParams:(NSDictionary *)params animated:(BOOL)animated;
 
@@ -22,5 +23,4 @@
 - (void)dismissVcAnimated:(BOOL)animated completed:(VoidBlock)completed;
 
 - (void)resetRootVcWithParams:(NSDictionary *)params;
-
 @end

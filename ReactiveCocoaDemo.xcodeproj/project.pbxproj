@@ -68,6 +68,7 @@
 		0948B8011D7BFCA400524F98 /* ZYTokenEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTokenEntity.m; sourceTree = "<group>"; };
 		0948B8031D7BFDB500524F98 /* NSObject+PropertyCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertyCode.h"; sourceTree = "<group>"; };
 		0948B8041D7BFDB500524F98 /* NSObject+PropertyCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PropertyCode.m"; sourceTree = "<group>"; };
+		0948B8061D7D0D3900524F98 /* ZYNavigationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYNavigationProtocol.h; sourceTree = "<group>"; };
 		096EC39C1D79549300580848 /* ZYRequestHander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYRequestHander.h; sourceTree = "<group>"; };
 		096EC39D1D79549300580848 /* ZYRequestHander.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYRequestHander.m; sourceTree = "<group>"; };
 		097317E11D77187E007D8082 /* ZYLoginVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLoginVc.h; sourceTree = "<group>"; };
@@ -372,6 +373,7 @@
 		09C4C7AF1D76D259002B21E2 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				0948B8061D7D0D3900524F98 /* ZYNavigationProtocol.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";

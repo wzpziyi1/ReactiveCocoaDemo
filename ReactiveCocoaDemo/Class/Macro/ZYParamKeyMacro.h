@@ -17,5 +17,6 @@
 
 #define kTokenEntityKey @"kTokenEntityKey"
 
+#define kNavTitleKey @"kNavTitleKey"
 
 #endif /* ZYParamKeyMacro_h */
