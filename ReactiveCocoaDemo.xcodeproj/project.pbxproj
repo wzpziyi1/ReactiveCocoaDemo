@@ -18,6 +18,19 @@
 		0948B80E1D7D1A1300524F98 /* NSString+Sha1.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B8091D7D1A1200524F98 /* NSString+Sha1.m */; };
 		0948B80F1D7D1A1300524F98 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B80B1D7D1A1200524F98 /* Reachability.m */; };
 		0948B8101D7D1A1300524F98 /* RNCachingURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B80D1D7D1A1200524F98 /* RNCachingURLProtocol.m */; };
+		0948B8131D7D22DB00524F98 /* ZYBaseTabBarVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B8121D7D22DB00524F98 /* ZYBaseTabBarVc.m */; };
+		0948B8161D7D24A800524F98 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 0948B8151D7D24A800524F98 /* MainVCSettings.json */; };
+		0948B8191D7D252A00524F98 /* ZYTabBarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B8181D7D252A00524F98 /* ZYTabBarViewModel.m */; };
+		0948B81C1D7D25F100524F98 /* ZYVcSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B81B1D7D25F100524F98 /* ZYVcSettingEntity.m */; };
+		0948B8201D7D29F100524F98 /* ZYHomeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B81E1D7D29F100524F98 /* ZYHomeVc.m */; };
+		0948B8211D7D29F100524F98 /* ZYHomeVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0948B81F1D7D29F100524F98 /* ZYHomeVc.xib */; };
+		0948B8251D7D2A1100524F98 /* ZYMessageVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B8231D7D2A1100524F98 /* ZYMessageVc.m */; };
+		0948B8261D7D2A1100524F98 /* ZYMessageVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0948B8241D7D2A1100524F98 /* ZYMessageVc.xib */; };
+		0948B82A1D7D2A4100524F98 /* ZYDiscoverVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B8281D7D2A4100524F98 /* ZYDiscoverVc.m */; };
+		0948B82B1D7D2A4100524F98 /* ZYDiscoverVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0948B8291D7D2A4100524F98 /* ZYDiscoverVc.xib */; };
+		0948B82F1D7D2A5B00524F98 /* ZYProfileVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B82D1D7D2A5B00524F98 /* ZYProfileVc.m */; };
+		0948B8301D7D2A5B00524F98 /* ZYProfileVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0948B82E1D7D2A5B00524F98 /* ZYProfileVc.xib */; };
+		0948B8331D7D2B6E00524F98 /* ZYNullVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B8321D7D2B6E00524F98 /* ZYNullVc.m */; };
 		096EC39E1D79549300580848 /* ZYRequestHander.m in Sources */ = {isa = PBXBuildFile; fileRef = 096EC39D1D79549300580848 /* ZYRequestHander.m */; };
 		097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 097317E21D77187E007D8082 /* ZYLoginVc.m */; };
 		097317E51D77187E007D8082 /* ZYLoginVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097317E31D77187E007D8082 /* ZYLoginVc.xib */; };
@@ -78,6 +91,27 @@
 		0948B80B1D7D1A1200524F98 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		0948B80C1D7D1A1200524F98 /* RNCachingURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCachingURLProtocol.h; sourceTree = "<group>"; };
 		0948B80D1D7D1A1200524F98 /* RNCachingURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCachingURLProtocol.m; sourceTree = "<group>"; };
+		0948B8111D7D22DB00524F98 /* ZYBaseTabBarVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBaseTabBarVc.h; sourceTree = "<group>"; };
+		0948B8121D7D22DB00524F98 /* ZYBaseTabBarVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBaseTabBarVc.m; sourceTree = "<group>"; };
+		0948B8151D7D24A800524F98 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		0948B8171D7D252A00524F98 /* ZYTabBarViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTabBarViewModel.h; sourceTree = "<group>"; };
+		0948B8181D7D252A00524F98 /* ZYTabBarViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTabBarViewModel.m; sourceTree = "<group>"; };
+		0948B81A1D7D25F100524F98 /* ZYVcSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYVcSettingEntity.h; sourceTree = "<group>"; };
+		0948B81B1D7D25F100524F98 /* ZYVcSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYVcSettingEntity.m; sourceTree = "<group>"; };
+		0948B81D1D7D29F100524F98 /* ZYHomeVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYHomeVc.h; sourceTree = "<group>"; };
+		0948B81E1D7D29F100524F98 /* ZYHomeVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYHomeVc.m; sourceTree = "<group>"; };
+		0948B81F1D7D29F100524F98 /* ZYHomeVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYHomeVc.xib; sourceTree = "<group>"; };
+		0948B8221D7D2A1100524F98 /* ZYMessageVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYMessageVc.h; sourceTree = "<group>"; };
+		0948B8231D7D2A1100524F98 /* ZYMessageVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYMessageVc.m; sourceTree = "<group>"; };
+		0948B8241D7D2A1100524F98 /* ZYMessageVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYMessageVc.xib; sourceTree = "<group>"; };
+		0948B8271D7D2A4100524F98 /* ZYDiscoverVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYDiscoverVc.h; sourceTree = "<group>"; };
+		0948B8281D7D2A4100524F98 /* ZYDiscoverVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYDiscoverVc.m; sourceTree = "<group>"; };
+		0948B8291D7D2A4100524F98 /* ZYDiscoverVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYDiscoverVc.xib; sourceTree = "<group>"; };
+		0948B82C1D7D2A5B00524F98 /* ZYProfileVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYProfileVc.h; sourceTree = "<group>"; };
+		0948B82D1D7D2A5B00524F98 /* ZYProfileVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYProfileVc.m; sourceTree = "<group>"; };
+		0948B82E1D7D2A5B00524F98 /* ZYProfileVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYProfileVc.xib; sourceTree = "<group>"; };
+		0948B8311D7D2B6E00524F98 /* ZYNullVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYNullVc.h; sourceTree = "<group>"; };
+		0948B8321D7D2B6E00524F98 /* ZYNullVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYNullVc.m; sourceTree = "<group>"; };
 		096EC39C1D79549300580848 /* ZYRequestHander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYRequestHander.h; sourceTree = "<group>"; };
 		096EC39D1D79549300580848 /* ZYRequestHander.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYRequestHander.m; sourceTree = "<group>"; };
 		097317E11D77187E007D8082 /* ZYLoginVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLoginVc.h; sourceTree = "<group>"; };
@@ -184,6 +218,14 @@
 				0948B80D1D7D1A1200524F98 /* RNCachingURLProtocol.m */,
 			);
 			path = WebViewCache;
+			sourceTree = "<group>";
+		};
+		0948B8141D7D24A800524F98 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0948B8151D7D24A800524F98 /* MainVCSettings.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		098684FF1D77D3DE006AB774 /* Utils */ = {
@@ -345,6 +387,9 @@
 		09C4C7A91D76D13D002B21E2 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				0948B8271D7D2A4100524F98 /* ZYDiscoverVc.h */,
+				0948B8281D7D2A4100524F98 /* ZYDiscoverVc.m */,
+				0948B8291D7D2A4100524F98 /* ZYDiscoverVc.xib */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -352,6 +397,9 @@
 		09C4C7AA1D76D13D002B21E2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0948B81D1D7D29F100524F98 /* ZYHomeVc.h */,
+				0948B81E1D7D29F100524F98 /* ZYHomeVc.m */,
+				0948B81F1D7D29F100524F98 /* ZYHomeVc.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -359,6 +407,9 @@
 		09C4C7AB1D76D13D002B21E2 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				0948B8221D7D2A1100524F98 /* ZYMessageVc.h */,
+				0948B8231D7D2A1100524F98 /* ZYMessageVc.m */,
+				0948B8241D7D2A1100524F98 /* ZYMessageVc.xib */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -366,6 +417,9 @@
 		09C4C7AC1D76D13D002B21E2 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				0948B82C1D7D2A5B00524F98 /* ZYProfileVc.h */,
+				0948B82D1D7D2A5B00524F98 /* ZYProfileVc.m */,
+				0948B82E1D7D2A5B00524F98 /* ZYProfileVc.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -373,6 +427,7 @@
 		09C4C7AD1D76D21C002B21E2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				0948B8141D7D24A800524F98 /* Resource */,
 				0989A0771D782F140050BA22 /* Network */,
 				09C4C7AF1D76D259002B21E2 /* Protocol */,
 				098685101D77D769006AB774 /* Category */,
@@ -389,6 +444,10 @@
 			children = (
 				09C4C7B31D76D317002B21E2 /* ZYBaseEntity.h */,
 				09C4C7B41D76D317002B21E2 /* ZYBaseEntity.m */,
+				0948B81A1D7D25F100524F98 /* ZYVcSettingEntity.h */,
+				0948B81B1D7D25F100524F98 /* ZYVcSettingEntity.m */,
+				0948B8311D7D2B6E00524F98 /* ZYNullVc.h */,
+				0948B8321D7D2B6E00524F98 /* ZYNullVc.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -406,6 +465,8 @@
 			children = (
 				09C4C7B91D76D348002B21E2 /* ZYBaseViewController.h */,
 				09C4C7BA1D76D348002B21E2 /* ZYBaseViewController.m */,
+				0948B8111D7D22DB00524F98 /* ZYBaseTabBarVc.h */,
+				0948B8121D7D22DB00524F98 /* ZYBaseTabBarVc.m */,
 			);
 			path = Vc;
 			sourceTree = "<group>";
@@ -422,6 +483,8 @@
 			children = (
 				09C4C7BC1D76D397002B21E2 /* ZYBaseViewModel.h */,
 				09C4C7BD1D76D397002B21E2 /* ZYBaseViewModel.m */,
+				0948B8171D7D252A00524F98 /* ZYTabBarViewModel.h */,
+				0948B8181D7D252A00524F98 /* ZYTabBarViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -589,7 +652,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				09C4C7801D76BBC3002B21E2 /* Assets.xcassets in Resources */,
+				0948B8261D7D2A1100524F98 /* ZYMessageVc.xib in Resources */,
+				0948B82B1D7D2A4100524F98 /* ZYDiscoverVc.xib in Resources */,
+				0948B8211D7D29F100524F98 /* ZYHomeVc.xib in Resources */,
 				097317E51D77187E007D8082 /* ZYLoginVc.xib in Resources */,
+				0948B8301D7D2A5B00524F98 /* ZYProfileVc.xib in Resources */,
+				0948B8161D7D24A800524F98 /* MainVCSettings.json in Resources */,
 				0948B7FD1D7BF8F000524F98 /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,15 +734,23 @@
 				0989A07D1D7832530050BA22 /* ZYUrlAccessUtil.m in Sources */,
 				0948B8101D7D1A1300524F98 /* RNCachingURLProtocol.m in Sources */,
 				0948B8051D7BFDB500524F98 /* NSObject+PropertyCode.m in Sources */,
+				0948B81C1D7D25F100524F98 /* ZYVcSettingEntity.m in Sources */,
 				09030CB41D7925AE00106B5E /* ZYHttpClient.m in Sources */,
 				09C4C7BB1D76D348002B21E2 /* ZYBaseViewController.m in Sources */,
+				0948B8331D7D2B6E00524F98 /* ZYNullVc.m in Sources */,
 				0986851C1D77E209006AB774 /* NSString+ZYAccessPath.m in Sources */,
+				0948B8131D7D22DB00524F98 /* ZYBaseTabBarVc.m in Sources */,
 				09C4C7B51D76D317002B21E2 /* ZYBaseEntity.m in Sources */,
 				098685131D77D97C006AB774 /* UIView+ZYPosition.m in Sources */,
 				097317E41D77187E007D8082 /* ZYLoginVc.m in Sources */,
+				0948B8201D7D29F100524F98 /* ZYHomeVc.m in Sources */,
 				096EC39E1D79549300580848 /* ZYRequestHander.m in Sources */,
+				0948B8251D7D2A1100524F98 /* ZYMessageVc.m in Sources */,
 				0948B8021D7BFCA400524F98 /* ZYTokenEntity.m in Sources */,
+				0948B82A1D7D2A4100524F98 /* ZYDiscoverVc.m in Sources */,
 				0948B7FC1D7BF8F000524F98 /* MBProgressHUD+MJ.m in Sources */,
+				0948B82F1D7D2A5B00524F98 /* ZYProfileVc.m in Sources */,
+				0948B8191D7D252A00524F98 /* ZYTabBarViewModel.m in Sources */,
 				0948B7F51D7AA35D00524F98 /* ZYLoginViewModel.m in Sources */,
 				09C4C7BE1D76D397002B21E2 /* ZYBaseViewModel.m in Sources */,
 				09C4C7751D76BBC3002B21E2 /* AppDelegate.m in Sources */,
