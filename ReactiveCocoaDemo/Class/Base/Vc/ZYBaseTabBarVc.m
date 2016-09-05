@@ -19,6 +19,8 @@
 
 @interface ZYBaseTabBarVc ()
 @property (nonatomic, strong) ZYTabBarViewModel *viewModel;
+
+@property (nonatomic, strong) UIButton *composeBtn;
 @end
 
 @implementation ZYBaseTabBarVc
@@ -35,6 +37,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tabBar addSubview:self.composeBtn];
+    CGFloat width = kScreenW / 5.0;
+    self.composeBtn.frame = CGRectMake(width * 2, 0, width, 49);
 }
 
 #pragma mark ----private
@@ -67,5 +78,23 @@
     return _viewModel;
 }
 
+- (UIButton *)composeBtn
+{
+    if (_composeBtn == nil)
+    {
+        _composeBtn = [[UIButton alloc] init];
+        [_composeBtn setImage:[UIImage imageNamed:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
+        [_composeBtn setImage:[UIImage imageNamed:@"tabbar_compose_icon_add_highlighted"] forState:UIControlStateHighlighted];
+        
+        [_composeBtn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button"] forState:UIControlStateNormal];
+        [_composeBtn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
+        
+        [[_composeBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            NSLog(@"-------");
+        }];
+        
+    }
+    return _composeBtn;
+}
 
 @end

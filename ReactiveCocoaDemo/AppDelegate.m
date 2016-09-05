@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ZYLoginVc.h"
 #import "RNCachingURLProtocol.h"
+#import "ZYBaseTabBarVc.h"
 
 @interface AppDelegate ()
 
@@ -19,13 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [NSURLProtocol registerClass:[RNCachingURLProtocol class]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
-    [[UITabBar appearance] setBarTintColor:[UIColor orangeColor]];
+    [UINavigationBar appearance].tintColor = [UIColor orangeColor];
+    [UITabBar appearance].tintColor = [UIColor orangeColor];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    ZYLoginVc *vc = [ZYLoginVc viewController];
+    ZYBaseTabBarVc *vc = [[ZYBaseTabBarVc alloc] init];
     
     self.window.rootViewController = vc;
     
