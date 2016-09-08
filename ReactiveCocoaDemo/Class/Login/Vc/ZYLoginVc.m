@@ -18,6 +18,11 @@
 
 @implementation ZYLoginVc
 
++ (instancetype)viewController
+{
+    return [[self alloc] initWithNibName:@"ZYLoginVc" bundle:nil];
+}
+
 #pragma mark ----life cycle
 
 - (void)viewDidLoad {
@@ -39,22 +44,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark ----must implementation
-
-+ (instancetype)viewController
-{
-    return [[self alloc] initWithNibName:@"ZYLoginVc" bundle:nil];
-}
-
-
 #pragma mark ----flow method
 - (void)layoutPageSubviews
 {
     [super layoutPageSubviews];
     
-    ZYWeakSelf;
+    @weakify(self);
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(weakSelf.view);
+        @strongify(self);
+        make.edges.equalTo(self.view);
     }];
 }
 
@@ -63,9 +61,7 @@
     [super bindSignal];
     
     [[self rac_signalForSelector:@selector(webViewDidStartLoad:) fromProtocol:@protocol(UIWebViewDelegate)] subscribeNext:^(id x) {
-
         [MBProgressHUD showMessage:@"正在加载..." toView:self.view];
-        
     }];
     
     [[self rac_signalForSelector:@selector(webViewDidFinishLoad:) fromProtocol:@protocol(UIWebViewDelegate)] subscribeNext:^(id x) {
@@ -75,7 +71,6 @@
     
     [[self rac_signalForSelector:@selector(webView:didFailLoadWithError:) fromProtocol:@protocol(UIWebViewDelegate)] subscribeNext:^(id x) {
         [MBProgressHUD hideHUDForView:self.view];
-//        [MBProgressHUD showError:@"网络异常，请重新加载"];
     }];
 }
 

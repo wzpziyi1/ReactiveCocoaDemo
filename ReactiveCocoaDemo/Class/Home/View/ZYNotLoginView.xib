@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZYNotLoginView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ddu-9P-HzL">
+                    <rect key="frame" x="0.0" y="90" width="320" height="300"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-y8-Cpo">
+                            <rect key="frame" x="110" y="45" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="lfl-7l-kiX"/>
+                                <constraint firstAttribute="width" constant="100" id="xfN-Qm-ijx"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="UTJ-dL-QSU">
+                            <rect key="frame" x="70" y="5" width="180" height="180"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="180" id="HBn-ov-QLX"/>
+                                <constraint firstAttribute="width" constant="180" id="o4v-yj-LXX"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注一些人，回到这里看看有什么惊喜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0c-nh-N8i">
+                            <rect key="frame" x="0.0" y="205" width="320" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwY-qu-AOY">
+                            <rect key="frame" x="110" y="241" width="100" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="sus-fJ-eKu"/>
+                                <constraint firstAttribute="height" constant="30" id="woB-Gt-lhD"/>
+                            </constraints>
+                            <state key="normal" title="去关注">
+                                <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="9pH-8W-C3c"/>
+                        <constraint firstItem="ahI-y8-Cpo" firstAttribute="top" secondItem="Ddu-9P-HzL" secondAttribute="top" constant="45" id="MZ1-R6-Xce"/>
+                        <constraint firstItem="S0c-nh-N8i" firstAttribute="leading" secondItem="Ddu-9P-HzL" secondAttribute="leading" id="WA5-uq-AsG"/>
+                        <constraint firstItem="fwY-qu-AOY" firstAttribute="top" secondItem="S0c-nh-N8i" secondAttribute="bottom" constant="20" id="XKI-pn-4F0"/>
+                        <constraint firstItem="S0c-nh-N8i" firstAttribute="top" secondItem="UTJ-dL-QSU" secondAttribute="bottom" constant="20" id="Z9H-k6-C5D"/>
+                        <constraint firstAttribute="trailing" secondItem="S0c-nh-N8i" secondAttribute="trailing" id="cCX-7p-Qad"/>
+                        <constraint firstItem="UTJ-dL-QSU" firstAttribute="centerX" secondItem="Ddu-9P-HzL" secondAttribute="centerX" id="fZM-yn-kMN"/>
+                        <constraint firstItem="UTJ-dL-QSU" firstAttribute="top" secondItem="Ddu-9P-HzL" secondAttribute="top" constant="5" id="oPz-Vo-yYw"/>
+                        <constraint firstItem="ahI-y8-Cpo" firstAttribute="centerX" secondItem="Ddu-9P-HzL" secondAttribute="centerX" id="pZm-0y-jhj"/>
+                        <constraint firstItem="fwY-qu-AOY" firstAttribute="centerX" secondItem="Ddu-9P-HzL" secondAttribute="centerX" id="qLa-Yx-LAc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ddu-9P-HzL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5Ng-ms-2C6"/>
+                <constraint firstItem="Ddu-9P-HzL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bMm-EL-sDC"/>
+                <constraint firstAttribute="trailing" secondItem="Ddu-9P-HzL" secondAttribute="trailing" id="h6E-RV-znX"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="focusBtn" destination="fwY-qu-AOY" id="wfU-sQ-6Nw"/>
+                <outlet property="wheelView" destination="UTJ-dL-QSU" id="aD7-hG-PIX"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="visitordiscover_feed_image_house" width="94" height="90"/>
+        <image name="visitordiscover_feed_image_smallicon" width="175" height="175"/>
+    </resources>
+</document>

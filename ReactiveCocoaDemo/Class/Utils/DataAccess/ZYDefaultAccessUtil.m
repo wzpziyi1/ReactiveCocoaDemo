@@ -64,14 +64,14 @@ static NSUserDefaults *_userDefault = nil;
 }
 
 #pragma mark - UserDefaults存自定义对象
-+ (void) persistObjAsData:(id)encodableObject forKey:(NSString *)key
++ (void)persistObjAsData:(id)encodableObject forKey:(NSString *)key
 {
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:encodableObject];
     [_userDefault setObject:data forKey:key];
     [_userDefault synchronize];
 }
 
-+ (id) objectFromDataWithKey:(NSString*)key
++ (id)objectFromDataWithKey:(NSString*)key
 {
     NSData *data = [self valueForKey:key];
     return [NSKeyedUnarchiver unarchiveObjectWithData:data];
