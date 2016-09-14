@@ -22,7 +22,13 @@
 
 - (void)commitInit
 {
-    
+    _loadStatusCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            [subscriber sendCompleted];
+            return nil;
+        }];
+    }];
 }
 
 - (BOOL)isLogined

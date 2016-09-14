@@ -80,6 +80,14 @@
 - (void)bindSignal
 {
     [super bindSignal];
+    
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kAppDidLoginNotification object:nil] subscribeNext:^(id x) {
+        [self.notLoginView removeFromSuperview];
+    }];
+    
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kAppDidLogoutNotification object:nil] subscribeNext:^(id x) {
+        
+    }];
 }
 
 - (void)dealEvent
@@ -99,6 +107,8 @@
 {
     [ZYTransitionUtil startLoginVcWithBaseVc:self params:nil completion:nil animated:YES];
 }
+
+#pragma mark ----private
 
 #pragma mark ----getter && setter
 

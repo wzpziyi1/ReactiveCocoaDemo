@@ -81,6 +81,12 @@
     [[self rac_signalForSelector:@selector(webView:didFailLoadWithError:) fromProtocol:@protocol(UIWebViewDelegate)] subscribeNext:^(id x) {
         [MBProgressHUD hideHUDForView:self.view];
     }];
+    
+    [[self.loginViewModel rac_signalForSelector:@selector(dismissVcAnimated:completed:)] subscribeNext:^(RACTuple *tuple) {
+        BOOL animated = [[tuple first] boolValue];
+        VoidBlock completed = [tuple last];
+        [self dismissViewControllerAnimated:animated completion:completed];
+    }];
 }
 
 - (void)dealEvent

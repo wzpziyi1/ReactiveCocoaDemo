@@ -23,4 +23,8 @@
 
 #define kIsLogin @"kIsLogin"
 
+#define kAppDidLoginNotification @"kAppDidLoginNotification"
+
+#define kAppDidLogoutNotification @"kAppDidLogoutNotification"
+
 #endif /* ZYParamKeyMacro_h */
