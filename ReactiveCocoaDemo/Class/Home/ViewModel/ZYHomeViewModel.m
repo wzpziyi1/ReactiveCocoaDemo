@@ -27,14 +27,12 @@
 
 - (BOOL)isLogined
 {
+    id isLogin = [ZYDefaultAccessUtil valueForKey:kIsLogin];
     
-    ZYTokenEntity *entity = [ZYDefaultAccessUtil objectFromDataWithKey:kTokenEntityKey];
-    
-    if (entity && [entity isTokenUseable])
+    if (isLogin && [isLogin boolValue])
     {
         return YES;
     }
-    
     return NO;
 }
 

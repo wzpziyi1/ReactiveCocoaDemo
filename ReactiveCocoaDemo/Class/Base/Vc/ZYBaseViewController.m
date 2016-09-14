@@ -16,6 +16,11 @@
 
 @implementation ZYBaseViewController
 
++ (instancetype)viewController
+{
+    return nil;
+}
+
 #pragma mark ----life cycle
 
 - (void)viewDidLoad {

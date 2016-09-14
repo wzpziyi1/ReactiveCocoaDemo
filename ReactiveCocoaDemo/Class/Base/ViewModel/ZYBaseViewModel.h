@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "ZYNavigationProtocol.h"
 
-@interface ZYBaseViewModel : NSObject <ZYNavigationProtocol>
+@interface ZYBaseViewModel : NSObject /*<ZYNavigationProtocol>*/
 
-- (void)pushVcWithParams:(NSDictionary *)params animated:(BOOL)animated;
-
-- (void)popVcAnimated:(BOOL)animated;
-
-- (void)popToRootVcAnimated:(BOOL)animated;
-
-- (void)presentVcWithParams:(NSDictionary *)params animated:(BOOL)animated completed:(VoidBlock)completed;
-
-- (void)dismissVcAnimated:(BOOL)animated completed:(VoidBlock)completed;
-
-- (void)resetRootVcWithParams:(NSDictionary *)params;
+//- (void)pushVcWithParams:(NSDictionary *)params animated:(BOOL)animated;
+//
+//- (void)popVcAnimated:(BOOL)animated;
+//
+//- (void)popToRootVcAnimated:(BOOL)animated;
+//
+//- (void)presentVcWithParams:(NSDictionary *)params animated:(BOOL)animated completed:(VoidBlock)completed;
+//
+//- (void)dismissVcAnimated:(BOOL)animated completed:(VoidBlock)completed;
+//
+//- (void)resetRootVcWithParams:(NSDictionary *)params;
 
 @end

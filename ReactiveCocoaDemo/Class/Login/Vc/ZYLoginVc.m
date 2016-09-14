@@ -31,6 +31,8 @@
     
     [self.view addSubview:self.webView];
     
+    [self setupNavigationBar];
+    
     [self layoutPageSubviews];
     
     [self bindSignal];
@@ -45,6 +47,13 @@
 }
 
 #pragma mark ----flow method
+
+- (void)setupNavigationBar
+{
+    self.navigationItem.title = @"登陆";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftItem)];
+}
+
 - (void)layoutPageSubviews
 {
     [super layoutPageSubviews];
@@ -81,6 +90,12 @@
     [self.webView loadRequest:self.loginViewModel.request];
 }
 
+#pragma mark ----event method
+
+- (void)clickLeftItem
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark ----webViewDelegate
 

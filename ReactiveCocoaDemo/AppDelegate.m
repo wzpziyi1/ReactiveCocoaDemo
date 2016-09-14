@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "RNCachingURLProtocol.h"
 #import "ZYBaseTabBarVc.h"
+#import "ZYNewFeatureVc.h"
+#import "ZYBaseTabBarVc.h"
+#import "ZYTokenEntity.h"
 
 @interface AppDelegate ()
 
@@ -25,9 +28,27 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    ZYBaseTabBarVc *vc = [[ZYBaseTabBarVc alloc] init];
+    CGFloat newVersion = [[NSBundle mainBundle].infoDictionary[kVersion] floatValue];
+    CGFloat oldVersion = [[ZYDefaultAccessUtil valueForKey:kVersion] floatValue];
     
-    self.window.rootViewController = vc;
+    if (newVersion != oldVersion)
+    {
+        [ZYDefaultAccessUtil saveValue:@(newVersion) forKey:kVersion];
+        [ZYTransitionUtil startNewFeatureWithMainWindow:self.window params:nil];
+    }
+    else
+    {
+        ZYTokenEntity *entity = [ZYDefaultAccessUtil objectFromDataWithKey:kTokenEntityKey];
+        if (entity && [entity isTokenUseable])
+        {
+            [ZYDefaultAccessUtil saveValue:@(YES) forKey:kIsLogin];
+        }
+        else
+        {
+            [ZYDefaultAccessUtil saveValue:@(NO) forKey:kIsLogin];
+        }
+        [ZYTransitionUtil startTabBarWithMainWindow:self.window params:nil];
+    }
     
     return YES;
 }

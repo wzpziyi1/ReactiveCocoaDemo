@@ -37,6 +37,7 @@
         [self.view addSubview:self.notLoginView];
     }
     
+    [self setupNavBar];
     [self layoutPageSubviews];
     [self bindSignal];
     [self dealEvent];
@@ -49,6 +50,14 @@
 }
 
 #pragma mark ----flow method
+
+- (void)setupNavBar
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftItem)];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"登陆" style:UIBarButtonItemStylePlain target:self action:@selector(clickRightItem)];
+}
+
 - (void)layoutPageSubviews
 {
     [super layoutPageSubviews];
@@ -76,8 +85,20 @@
 - (void)dealEvent
 {
     [super dealEvent];
+    
 }
 
+#pragma mark ----event method
+
+- (void)clickLeftItem
+{
+    ZYLog(@"%s", __func__);
+}
+
+- (void)clickRightItem
+{
+    [ZYTransitionUtil startLoginVcWithBaseVc:self params:nil completion:nil animated:YES];
+}
 
 #pragma mark ----getter && setter
 

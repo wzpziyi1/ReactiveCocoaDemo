@@ -72,6 +72,7 @@
         {
             weakSelf.tokenEntity = (ZYTokenEntity *)x;
             [ZYDefaultAccessUtil persistObjAsData:weakSelf.tokenEntity forKey:kTokenEntityKey];
+            [ZYDefaultAccessUtil saveValue:@(YES) forKey:kIsLogin];
 //            [self resetRootVcWithParams:<#(NSDictionary *)#>];
         }
         

@@ -19,4 +19,8 @@
 
 #define kNavTitleKey @"kNavTitleKey"
 
+#define kVersion @"CFBundleVersion"
+
+#define kIsLogin @"kIsLogin"
+
 #endif /* ZYParamKeyMacro_h */
