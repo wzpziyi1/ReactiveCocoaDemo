@@ -9,6 +9,8 @@
 #ifndef ZYCommonKeyMacro_h
 #define ZYCommonKeyMacro_h
 
+typedef  void(^kBlockNext)(id);
+
 #define ZYWeakSelf __weak typeof(self) weakSelf = self
 
 #define kScreenH [UIScreen mainScreen].bounds.size.height
@@ -29,6 +31,7 @@
 #define kLibraryPath [ZYFilePathUtil libraryPath]
 
 #define kTmpPath [ZYFilePathUtil tmpPath]
+
 
 
 

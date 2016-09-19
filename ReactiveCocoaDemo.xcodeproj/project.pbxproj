@@ -16,6 +16,8 @@
 		0917CB5C1D7FB99100B4F4B2 /* ZYHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0917CB5B1D7FB99100B4F4B2 /* ZYHomeViewModel.m */; };
 		0917CB5F1D7FBE0D00B4F4B2 /* ZYNotLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0917CB5E1D7FBE0D00B4F4B2 /* ZYNotLoginView.m */; };
 		0917CB611D7FBE2300B4F4B2 /* ZYNotLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0917CB601D7FBE2300B4F4B2 /* ZYNotLoginView.xib */; };
+		0923A56B1D8FC329005C58FB /* UIBarButtonItem+ZYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0923A56A1D8FC329005C58FB /* UIBarButtonItem+ZYExtension.m */; };
+		0923A56E1D8FCC99005C58FB /* ZYStatusEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0923A56D1D8FCC99005C58FB /* ZYStatusEntity.m */; };
 		0948B7F51D7AA35D00524F98 /* ZYLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B7F41D7AA35D00524F98 /* ZYLoginViewModel.m */; };
 		0948B7FC1D7BF8F000524F98 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948B7F81D7BF8F000524F98 /* MBProgressHUD+MJ.m */; };
 		0948B7FD1D7BF8F000524F98 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0948B7F91D7BF8F000524F98 /* MBProgressHUD.bundle */; };
@@ -91,6 +93,10 @@
 		0917CB5D1D7FBE0D00B4F4B2 /* ZYNotLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYNotLoginView.h; sourceTree = "<group>"; };
 		0917CB5E1D7FBE0D00B4F4B2 /* ZYNotLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYNotLoginView.m; sourceTree = "<group>"; };
 		0917CB601D7FBE2300B4F4B2 /* ZYNotLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYNotLoginView.xib; sourceTree = "<group>"; };
+		0923A5691D8FC329005C58FB /* UIBarButtonItem+ZYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ZYExtension.h"; sourceTree = "<group>"; };
+		0923A56A1D8FC329005C58FB /* UIBarButtonItem+ZYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+ZYExtension.m"; sourceTree = "<group>"; };
+		0923A56C1D8FCC99005C58FB /* ZYStatusEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYStatusEntity.h; sourceTree = "<group>"; };
+		0923A56D1D8FCC99005C58FB /* ZYStatusEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYStatusEntity.m; sourceTree = "<group>"; };
 		0948B7F31D7AA35D00524F98 /* ZYLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLoginViewModel.h; sourceTree = "<group>"; };
 		0948B7F41D7AA35D00524F98 /* ZYLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLoginViewModel.m; sourceTree = "<group>"; };
 		0948B7F71D7BF8F000524F98 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
@@ -224,6 +230,8 @@
 		0917CB511D7FB91E00B4F4B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0923A56C1D8FCC99005C58FB /* ZYStatusEntity.h */,
+				0923A56D1D8FCC99005C58FB /* ZYStatusEntity.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +345,8 @@
 		098685101D77D769006AB774 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0923A5691D8FC329005C58FB /* UIBarButtonItem+ZYExtension.h */,
+				0923A56A1D8FC329005C58FB /* UIBarButtonItem+ZYExtension.m */,
 				0948B8031D7BFDB500524F98 /* NSObject+PropertyCode.h */,
 				0948B8041D7BFDB500524F98 /* NSObject+PropertyCode.m */,
 				098685111D77D97C006AB774 /* UIView+ZYPosition.h */,
@@ -818,6 +828,7 @@
 				09030CB41D7925AE00106B5E /* ZYHttpClient.m in Sources */,
 				09C4C7BB1D76D348002B21E2 /* ZYBaseViewController.m in Sources */,
 				0948B8331D7D2B6E00524F98 /* ZYNullVc.m in Sources */,
+				0923A56B1D8FC329005C58FB /* UIBarButtonItem+ZYExtension.m in Sources */,
 				0986851C1D77E209006AB774 /* NSString+ZYAccessPath.m in Sources */,
 				0948B8131D7D22DB00524F98 /* ZYBaseTabBarVc.m in Sources */,
 				09C4C7B51D76D317002B21E2 /* ZYBaseEntity.m in Sources */,
@@ -826,6 +837,7 @@
 				096EC39E1D79549300580848 /* ZYRequestHander.m in Sources */,
 				0948B8251D7D2A1100524F98 /* ZYMessageVc.m in Sources */,
 				09BCE6C01D87EC8F00C83D61 /* ZYTransitionUtil.m in Sources */,
+				0923A56E1D8FCC99005C58FB /* ZYStatusEntity.m in Sources */,
 				0948B8021D7BFCA400524F98 /* ZYTokenEntity.m in Sources */,
 				0948B82A1D7D2A4100524F98 /* ZYDiscoverVc.m in Sources */,
 				0948B7FC1D7BF8F000524F98 /* MBProgressHUD+MJ.m in Sources */,

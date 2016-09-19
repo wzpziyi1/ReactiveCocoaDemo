@@ -15,5 +15,7 @@
 //OAuth2的access_token接口
 #define kApiAccessToken @"oauth2/access_token"
 
+//获取当前登录用户及其所关注（授权）用户的最新微博
+#define kApiFetchStatus @"statuses/friends_timeline"
 
 #endif /* ZYAPIMacro_h */

@@ -11,5 +11,7 @@
 @interface ZYHomeViewModel : ZYBaseViewModel
 @property (nonatomic, assign, readonly) BOOL isLogined;
 
+@property (nonatomic, strong, readonly) NSArray *statusArr;
+
 @property (nonatomic, strong, readonly) RACCommand *loadStatusCommand;
 @end

@@ -10,10 +10,12 @@
 #import "ZYHomeViewModel.h"
 #import "ZYNotLoginView.h"
 
-@interface ZYHomeVc ()
+@interface ZYHomeVc () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) ZYHomeViewModel *homeViewModel;
 
 @property (nonatomic, strong) ZYNotLoginView *notLoginView;
+
+@property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation ZYHomeVc
@@ -30,18 +32,20 @@
     
     if (self.homeViewModel.isLogined)
     {
-        
+        [self.homeViewModel.loadStatusCommand execute:nil];
+        [self setupNavBarForLogined];
+        [self.view addSubview:self.tableView];
     }
     else
     {
+        [self setupNavBarForNoLogined];
         [self.view addSubview:self.notLoginView];
     }
     
-    [self setupNavBar];
+    
     [self layoutPageSubviews];
     [self bindSignal];
     [self dealEvent];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +55,14 @@
 
 #pragma mark ----flow method
 
-- (void)setupNavBar
+- (void)setupNavBarForLogined
+{
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"navigationbar_friendattention" highImageName:@"navigationbar_friendattention_highlighted" target:self action:@selector(clickLeftItem)];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"" highImageName:@"" target:self action:@selector(transformToQRcodeVc)];
+}
+
+- (void)setupNavBarForNoLogined
 {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftItem)];
     
@@ -62,13 +73,17 @@
 {
     [super layoutPageSubviews];
     
+    @weakify(self);
     if (self.homeViewModel.isLogined)
     {
-        
+        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            @strongify(self);
+            make.edges.equalTo(self.view);
+        }];
     }
     else
     {
-        @weakify(self);
+        
         [self.notLoginView mas_makeConstraints:^(MASConstraintMaker *make) {
             @strongify(self);
             make.edges.equalTo(self.view);
@@ -83,10 +98,15 @@
     
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kAppDidLoginNotification object:nil] subscribeNext:^(id x) {
         [self.notLoginView removeFromSuperview];
+        [self.homeViewModel.loadStatusCommand execute:nil];
+        [self setupNavBarForLogined];
+        [self layoutPageSubviews];
     }];
     
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kAppDidLogoutNotification object:nil] subscribeNext:^(id x) {
-        
+        [self.tableView removeFromSuperview];
+        [self setupNavBarForNoLogined];
+        [self layoutPageSubviews];
     }];
 }
 
@@ -108,7 +128,28 @@
     [ZYTransitionUtil startLoginVcWithBaseVc:self params:nil completion:nil animated:YES];
 }
 
+- (void)transformToQRcodeVc
+{
+    ZYLog(@"%s", __func__);
+}
+
 #pragma mark ----private
+
+#pragma mark ----UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.homeViewModel.statusArr.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
 
 #pragma mark ----getter && setter
 
@@ -129,6 +170,18 @@
         [_notLoginView startAnimation];
     }
     return _notLoginView;
+}
+
+- (UITableView *)tableView
+{
+    if (!_tableView)
+    {
+        _tableView = [[UITableView alloc] init];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return _tableView;
 }
 
 @end

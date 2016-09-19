@@ -23,6 +23,8 @@
 
 #define kIsLogin @"kIsLogin"
 
+#define kAccessToken @"kAccessToken"
+
 #define kAppDidLoginNotification @"kAppDidLoginNotification"
 
 #define kAppDidLogoutNotification @"kAppDidLogoutNotification"

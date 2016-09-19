@@ -73,6 +73,7 @@
             weakSelf.tokenEntity = (ZYTokenEntity *)x;
             [ZYDefaultAccessUtil persistObjAsData:weakSelf.tokenEntity forKey:kTokenEntityKey];
             [ZYDefaultAccessUtil saveValue:@(YES) forKey:kIsLogin];
+            [ZYDefaultAccessUtil saveValue:weakSelf.tokenEntity.access_token forKey:kAccessToken];
             [[NSNotificationCenter defaultCenter] postNotificationName:kAppDidLoginNotification object:nil];
             [self dismissVcAnimated:YES completed:nil];
         }
@@ -107,11 +108,5 @@
     };
 }
 
-#pragma mark ----ZYNavigationProtocol
-
-- (void)resetRootVcWithParams:(NSDictionary *)params
-{
-    
-}
 
 @end
