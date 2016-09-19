@@ -16,6 +16,6 @@
 #define kApiAccessToken @"oauth2/access_token"
 
 //获取当前登录用户及其所关注（授权）用户的最新微博
-#define kApiFetchStatus @"statuses/friends_timeline"
+#define kApiFetchStatus @"2/statuses/friends_timeline.json?"
 
 #endif /* ZYAPIMacro_h */

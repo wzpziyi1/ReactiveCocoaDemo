@@ -80,7 +80,7 @@
         
     }];
     
-    [_tokenCommand.executing subscribeNext:^(id x) {
+    [[_tokenCommand.executing skip:1] subscribeNext:^(id x) {
         if ([x boolValue])
         {
             [MBProgressHUD showMessage:@"正在加载..."];

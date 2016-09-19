@@ -46,7 +46,7 @@ static id _install = nil;
  */
 - (void)executeGetRequestWithURL:(NSString *)urlStr params:(NSDictionary *)params success:(SuccessBlock)success failure:(FailedBlock)failure
 {
-    [self executeRequestWithUrl:urlStr method:ZYHttpClientTypeGet success:^(id obj) {
+    [self executeRequestWithUrl:urlStr method:ZYHttpClientTypeGet params:params success:^(id obj) {
         if(success)
         {
             success(obj);
@@ -185,30 +185,28 @@ static id _install = nil;
         //服务端返回成功，返回数据，否则返回异常信息
         if (responseObject)
         {
-            
+            id obj = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+            NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            ZYLog(@"返回会的数据是  is %@",str);
             @try {
-                NSString *request = [responseObject objectForKey:@"request"];
-                NSString *error_code = [responseObject objectForKey:@"error_code"];
-                NSString *error = [responseObject objectForKey:@"error"];
-                if (error == nil || error.length == 0)
+//                NSString *request = [responseObject objectForKey:@"request"];
+//                NSString *error_code = [responseObject objectForKey:@"error_code"];
+//                NSString *error = [responseObject objectForKey:@"error"];
+//                if (error == nil || error.length == 0)
+                
+                if (success)
                 {
-                    if (success)
-                    {
-                        
-                        NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil];
-                        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                        ZYLog(@"返回会的数据是  is %@",str);
-                        success(responseObject);
-                    }
+                    
+                    
+                    success(obj);
                 }
                 else
                 {
                     if (failure)
                     {
-                        NSDictionary *errDic = @{@"error_code": error_code,
-                                                 @"error":error,
-                                                 @"request":request};
-                        ZYLog(@"返回会的数据是  is %@",error);
+                        NSDictionary *errDic = @{@"error_code": @"400",
+                                                 @"error": @"网络有问题，请重试",
+                                                 @"request": urlStr};
                         failure(errDic);
                     }
                 }
@@ -216,7 +214,7 @@ static id _install = nil;
             } @catch (NSException *exception) {
                 if (success)
                 {
-                    success(responseObject);
+                    success(obj);
                 }
             } @finally {
                 
@@ -244,25 +242,23 @@ static id _install = nil;
         {
             @try {
                 
-                NSString *request = [responseObject objectForKey:@"request"];
-                NSString *error_code = [responseObject objectForKey:@"error_code"];
-                NSString *error = [responseObject objectForKey:@"error"];
+//                NSString *request = [responseObject objectForKey:@"request"];
+//                NSString *error_code = [responseObject objectForKey:@"error_code"];
+//                NSString *error = [responseObject objectForKey:@"error"];
                 
-                if (error == nil || error.length == 0)
+                
+                if (success)
                 {
-                    if (success)
-                    {
-                        success(responseObject);
-                    }
+                    success(responseObject);
                 }
                 else
                 {
                     if (failure)
                     {
                         
-                        NSDictionary *errDic = @{@"error_code": error_code,
-                                                 @"error":error,
-                                                 @"request":request};
+                        NSDictionary *errDic = @{@"error_code": @"400",
+                                                 @"error": @"网络有问题，请重试",
+                                                 @"request": @""};
                         failure(errDic);
                     }
                 }
@@ -286,38 +282,37 @@ static id _install = nil;
 
 #pragma mark ----private
 //无缓存
--(void)executeRequestWithUrl:(NSString *)urlStr method:(NSInteger)method success:(SuccessBlock)success failure:(FailedBlock)failure
+-(void)executeRequestWithUrl:(NSString *)urlStr method:(NSInteger)method params:(NSDictionary *)params success:(SuccessBlock)success failure:(FailedBlock)failure
 {
     
     
-    [self.client requestWithPath:urlStr method:method parameters:nil prepareExecute:^{
+    [self.client requestWithPath:urlStr method:method parameters:params prepareExecute:^{
         //
     } success:^(NSURLSessionDataTask *task, id responseObject) {
         
         //服务端返回成功，返回数据，否则返回异常信息
         if (responseObject)
         {
+            id obj = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
             @try {
                 
-                NSString *request = [responseObject objectForKey:@"request"];
-                NSString *error_code = [responseObject objectForKey:@"error_code"];
-                NSString *error = [responseObject objectForKey:@"error"];
+//                NSString *request = [responseObject objectForKey:@"request"];
+//                NSString *error_code = [responseObject objectForKey:@"error_code"];
+//                NSString *error = [responseObject objectForKey:@"error"];
                 
-                if (error == nil || error.length == 0)
+                
+                if (success)
                 {
-                    if (success)
-                    {
-                        success(responseObject);
-                    }
+                    success(obj);
                 }
                 else
                 {
                     if (failure)
                     {
                         
-                        NSDictionary *errDic = @{@"error_code": error_code,
-                                                 @"error":error,
-                                                 @"request":request};
+                        NSDictionary *errDic = @{@"error_code": @"400",
+                                                 @"error": @"网络有问题，请重试",
+                                                 @"request": @""};
                         failure(errDic);
                     }
                 }
@@ -325,7 +320,7 @@ static id _install = nil;
             } @catch (NSException *exception) {
                 if (success)
                 {
-                    success(responseObject);
+                    success(obj);
                 }
             } @finally {
                 
@@ -333,7 +328,9 @@ static id _install = nil;
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         //
+        NSLog(@"%@", error);
         if (failure) {
+            
             NSDictionary *errDic = @{@"error":@"当前网络不通畅,请重试"};
             failure(errDic);
         }

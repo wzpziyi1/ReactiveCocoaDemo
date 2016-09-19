@@ -76,15 +76,16 @@
     @weakify(self);
     if (self.homeViewModel.isLogined)
     {
-        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
             @strongify(self);
+            NSLog(@"======1111");
             make.edges.equalTo(self.view);
         }];
     }
     else
     {
         
-        [self.notLoginView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.notLoginView mas_remakeConstraints:^(MASConstraintMaker *make) {
             @strongify(self);
             make.edges.equalTo(self.view);
         }];
@@ -100,6 +101,7 @@
         [self.notLoginView removeFromSuperview];
         [self.homeViewModel.loadStatusCommand execute:nil];
         [self setupNavBarForLogined];
+        [self.view addSubview:self.tableView];
         [self layoutPageSubviews];
     }];
     
@@ -180,6 +182,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.backgroundColor = [UIColor redColor];
     }
     return _tableView;
 }

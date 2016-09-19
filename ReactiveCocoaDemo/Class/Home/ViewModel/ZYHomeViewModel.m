@@ -62,7 +62,9 @@
             
             [[ZYRequestHander shareHander] executeGetRequestWithURL:kApiFetchStatus params:dict success:^(id obj) {
                 
-                [ZYStatusEntity modelStrWithDict:[obj[@"statuses"] firstObject]];
+                
+                
+                [ZYStatusEntity modelStrWithDict:[obj[@"statuses"] lastObject]];
                 
                 [subscriber sendNext:obj];
                 [subscriber sendCompleted];
@@ -76,7 +78,7 @@
     
     [[_loadStatusCommand.executionSignals switchToLatest] subscribeNext:self.blockHUD];
     
-    [_loadStatusCommand.executing subscribeNext:^(id x) {
+    [[_loadStatusCommand.executing skip:1] subscribeNext:^(id x) {
         if ([x boolValue])
         {
             [MBProgressHUD showMessage:@"正在加载..."];
